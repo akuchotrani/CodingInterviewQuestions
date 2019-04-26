@@ -1,0 +1,56 @@
+"""
+Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+
+Note: 
+You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
+
+Example 1:
+
+Input: root = [3,1,4,null,2], k = 1
+   3
+  / \
+ 1   4
+  \
+   2
+Output: 1
+Example 2:
+
+Input: root = [5,3,6,2,4,null,null,1], k = 3
+       5
+      / \
+     3   6
+    / \
+   2   4
+  /
+ 1
+Output: 3
+Follow up:
+What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
+"""
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def kthSmallest(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """
+        #The idea is to do inorder traversal using dfs. Inorder traversal in BST is always sorted
+        inOrder = []
+        def dfs(root):
+            if root:
+                dfs(root.left)
+                inOrder.append(root.val)
+                dfs(root.right)
+        dfs(root)
+        #Finally return the k th element in the inOrder list. If the list is empty return None
+        return inOrder[k-1] if inOrder else None
+        
+        #This is linear time and linear space solution. If the tree is changed, the complexity will be linear time because you just have to modify the inorder list
