@@ -1,0 +1,56 @@
+"""
+Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+Example 1:
+
+Input:
+11110
+11010
+11000
+00000
+
+Output: 1
+Example 2:
+
+Input:
+11000
+11000
+00100
+00011
+
+Output: 3
+"""
+
+class Solution(object):
+    def numIslands(self, grid):
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
+        # The idea is to traverse through the matrix and if element is 1, make it -1 and recurse that on its neighbours
+        count = 0 
+        row = len(grid)
+        col = len(grid[0]) if row!=0 else 0
+        
+        #action is the recursive dfs method that takes action on the neighbours of cell with 1
+        def action(i,j):
+            #Take action only if the neighbour is 1
+            if grid[i][j]=="1":
+                #make the cell -1 so that it is not mistaken to be a different island
+                grid[i][j]=-1
+                #call the method on all the neighbours in all four directions but checkout for the list index out of bound
+                action(min(i+1,row-1),j)
+                action(max(0,i-1) ,j)
+                action(i,min(j+1,col-1))
+                action(i,max(0,j-1))
+                
+        #these loops traverse through the matrix
+        for i in range(row):
+            for j in range(col):
+                #if you get a 1 then take action on it
+                if(grid[i][j]=="1"):
+                    # count is the total number of islands. every time you get a new one, you see a fresh island
+                    count+=1
+                    action(i,j)
+        return count
+        # This is a linear time constant space solution
