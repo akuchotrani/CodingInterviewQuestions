@@ -1,0 +1,57 @@
+Leetcode Problem 17 : Letter Combinations of a Phone Number
+Description: Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+Example : Input: "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+
+Hint to solve: recrusive solution until no digit left.
+
+Language: C#
+
+
+public class Solution 
+{
+    IList<string> Answer;
+    List<string> mapping;
+    public Solution()
+    {
+        Answer = new List<string>();
+        mapping = new List<string>{"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    }
+    
+    public void GeneratePermutaion(string digitsLeft,string currentCombination)
+    {
+       // Console.WriteLine("DigitsLeft: "+ digitsLeft + " currentCombination: "+currentCombination);
+       if(String.IsNullOrEmpty(digitsLeft))
+       {
+           Answer.Add(currentCombination);
+           return;
+       }
+        
+        char firstDigit = digitsLeft[0];
+        string temp = "";
+        for(int i = 1; i<digitsLeft.Count(); ++i)
+        {
+            temp += digitsLeft[i];
+        }
+        digitsLeft = temp;
+        
+        string alphabets = mapping[firstDigit - '0'];
+        for(int i = 0; i<alphabets.Count(); ++i)
+        {
+            string combination = currentCombination + alphabets[i];
+            GeneratePermutaion(digitsLeft,combination);
+        }
+        
+    }
+    public IList<string> LetterCombinations(string digits) 
+    {
+        if(String.IsNullOrEmpty(digits))
+            return Answer;
+        
+        string combination = "";
+        GeneratePermutaion(digits,combination);
+        return Answer;
+        
+    }
+}

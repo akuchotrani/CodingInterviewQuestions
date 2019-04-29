@@ -1,0 +1,289 @@
+Leetcode problem : 51. N-Queens
+Description : The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
+Given an integer n, return all distinct solutions to the n-queens puzzle.
+Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space respectively.
+
+Example: 
+
+Input: 4
+Output: [
+ [".Q..",  // Solution 1
+  "...Q",
+  "Q...",
+  "..Q."],
+
+ ["..Q.",  // Solution 2
+  "Q...",
+  "...Q",
+  ".Q.."]
+]
+
+
+Hint To Solve : Recursion until all rows get filled. Backtracking if the current queen placement fails.
+
+Language: C#
+
+
+
+public class Solution
+{
+    private IList<IList<string>> Answer;
+    
+    public Solution()
+    {
+        Answer = new List<IList<string>>();
+    }
+    
+    void RecordAnswer(bool[,] binaryGrid, int boardSize)
+    {
+        
+        List<string> solution = new List<string>();
+        for(int i = 0; i<boardSize; ++i)
+        {
+            string row = "";
+            for(int j = 0; j<boardSize; ++j)
+            {
+                if(binaryGrid[i,j] == false)
+                {
+                    row += ".";
+                }
+                else
+                {
+                    row += "Q";
+                }
+            }
+            solution.Add(row);
+        }
+        
+        Answer.Add(solution);
+    }
+    
+    //Printing the binary grid.
+    void PrintGrid(bool[,] binaryGrid,int totalQueens)
+    {
+        for(int i = 0; i<totalQueens; ++i)
+        {
+            for(int j = 0; j<totalQueens; ++j)
+            {
+                Console.Write(binaryGrid[i,j] + " ");
+            }
+            Console.WriteLine();
+        }
+        
+        Console.WriteLine("-------------------------------------------------");
+        Console.WriteLine();
+    }
+    
+    //Traverse horizontal, vertical and diagonal and check if it's safe
+    bool isSafeToPlace(int currentRow, int currentCol, bool[,] binaryGrid,int boardSize)
+    {
+        bool result = true;
+        
+        //Check vertical upward.
+        int row = currentRow+1;
+        int col = currentCol;
+        while(row < boardSize)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row += 1;
+            }
+        }
+        
+        //Check vertical downward.
+        row = currentRow - 1;
+        col = currentCol;
+        while(row >= 0)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row -= 1;
+            }
+        }
+        //Console.WriteLine("Vertical Safe");
+
+        
+        //Check horizontal right.
+        row = currentRow;
+        col = currentCol+1;
+        while(col < boardSize)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                col += 1;
+            }
+        }
+        
+        //Check horizontal left.
+        row = currentRow;
+        col = currentCol-1;
+        while(col >= 0)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                col -= 1;
+            }
+        }
+        //Console.WriteLine("Horizontal Safe");
+
+        
+        //Check diagonal NE.
+        row = currentRow-1;
+        col = currentCol+1;
+        while(row >= 0 && col<boardSize)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row = row-1;
+                col = col+1;
+            }
+        }
+        
+        //Check diagonal NW.
+        row = currentRow-1;
+        col = currentCol-1;
+        while(row >= 0 && col>=0)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row = row-1;
+                col = col-1;
+            }
+        }
+        
+        
+        
+        //Check diagonal SE.
+        row = currentRow+1;
+        col = currentCol+1;
+        while(row < boardSize && col < boardSize)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row = row+1;
+                col = col+1;
+            }
+        }
+        
+        
+        //Check diagonal SW.
+        row = currentRow+1;
+        col = currentCol-1;
+        while(row < boardSize && col>=0)
+        {
+            if(binaryGrid[row,col] == true)
+            {
+                result = false;
+                return result;
+            }
+            else
+            {
+                row = row+1;
+                col = col-1;
+            }
+        }
+        //Console.WriteLine("Diagonal Safe");
+        
+        return result;
+        
+    }
+    
+    //Recursive call 
+    bool placeQueen(int row, ref bool[,] binaryGrid,int totalQueens)
+    {
+       if(row == totalQueens)
+       {
+           //Console.WriteLine("################### Final Result ######################");
+           //PrintGrid(binaryGrid,totalQueens);
+           RecordAnswer(binaryGrid, totalQueens);
+           return true;
+       }
+        else
+        {
+            //PrintGrid(binaryGrid,totalQueens);
+
+            for(int col = 0; col<totalQueens; ++col)
+            {
+                //Check if this position is safe for this queen.
+                if(isSafeToPlace(row,col,binaryGrid,totalQueens))
+                {
+                    //Console.WriteLine("Safe to place queen at :"+ row + "," + col +" at row: "+ row);
+                    //Place the queen. Make this position taken.
+                    binaryGrid[row,col] = true;
+                    
+                    //Move to next row and try to place queen.
+                    bool solutionFound = placeQueen(row+1,ref binaryGrid, totalQueens);
+                    if(solutionFound == true)
+                    {
+                        //return true;
+                    }
+                    
+                    //If we can't place queens in future. Move this queen and try another position.
+                    //Unplace this queen.
+                    binaryGrid[row,col] = false;
+                }
+            }
+        }
+        
+        //We tried all possible scenarios but no solution found.
+        return false;
+    
+    }
+    
+    
+    public IList<IList<string>> SolveNQueens(int n) 
+    {
+        bool[,] binaryGrid = new bool[n,n];
+        for(int i = 0; i<n; ++i)
+        {
+            for(int j = 0; j<n; ++j)
+            {
+                binaryGrid[i,j] = false;
+            }
+        }
+        
+        placeQueen(0,ref binaryGrid,n);
+        
+        
+        return Answer;
+        
+        
+    }
+}
+
+	
