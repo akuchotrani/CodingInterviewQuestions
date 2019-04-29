@@ -1,0 +1,16 @@
+What is IP or IP address?
+
+IP is an abbreviation of Internet protocol. 
+
+Function:
+It serves two purposes
+1) Identification of host/network interface.
+2) Provide location of host in the network.
+
+Version:
+There are two versions of IP
+IPv4 - 32 bit address. (example : 172.16.254.1)
+IPv6 - 128 bit address. (example :  2001:db8:0:1234:0:567:8:1)(Developed because of growth of internet and deplition of available IPv4 addresses)
+
+Additional Info:
+IP addresses space is managed globally by IANA(Internet Assigned Numbers Authority) and 5 RIRs(Regional Internet Registeries).
