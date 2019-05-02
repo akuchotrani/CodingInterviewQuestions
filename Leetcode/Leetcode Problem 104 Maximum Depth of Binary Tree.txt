@@ -1,0 +1,65 @@
+Leetcode 104: Maximum Depth of Binary Tree
+
+Description: Given a binary tree, find its maximum depth.
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Note: A leaf is a node with no children.
+
+Example:
+
+Given binary tree [3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its depth = 3.
+
+Hint: Maintain global variable to record max height. 
+Make helper function and call recursively left and right node and current height.
+Increament the current height in each recrusive call and check if we need to update the max height.
+
+Solution:
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    
+    public int maxHeight;
+    
+    public Solution()
+    {
+        maxHeight = 0;
+    }
+    
+    public int MaxDepthRecursive(TreeNode root,int currentHeight)
+    {
+        if(root == null)
+        {
+            return maxHeight;
+        }
+        currentHeight += 1;
+        if(currentHeight > maxHeight)
+        {
+            maxHeight = currentHeight;
+        }
+        //Console.WriteLine("CurrentNode: "+ root.val+ " CurrentHeight: "+currentHeight+ " MaxHeight: "+ maxHeight);
+        int leftHeight = MaxDepthRecursive(root.left,currentHeight);
+        int rightHeight = MaxDepthRecursive(root.right,currentHeight);
+        
+        return maxHeight;
+    }
+    
+    public int MaxDepth(TreeNode root) 
+    {
+       int result =  MaxDepthRecursive(root,0);
+       return result;
+    }
+}
