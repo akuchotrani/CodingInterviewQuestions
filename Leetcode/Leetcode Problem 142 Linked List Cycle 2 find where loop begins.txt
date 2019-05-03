@@ -1,0 +1,110 @@
+Leetcode Problem: 142. Linked List Cycle II
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. 
+If pos is -1, then there is no cycle in the linked list.
+
+Note: Do not modify the linked list.
+
+Example 1:
+
+Input: head = [3,2,0,-4], pos = 1
+Output: tail connects to node index 1
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+
+
+Example 2:
+
+Input: head = [1,2], pos = 0
+Output: tail connects to node index 0
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+Example 3:
+
+Input: head = [1], pos = -1
+Output: no cycle
+Explanation: There is no cycle in the linked list.
+
+
+Hint To Solve: Use rabit and tortoise method to find if there is a cycle in a linked list. 
+If they interset then find the length of the cycle by creating additional temp pointer. Move it one position at a time until it intersects with rabit/tortoise.
+Create two pointers P1 and P2. P1 will point to head of list and P2 will point to node which is length of cycle apart from head.
+Move P1 and P2 one step at a time until they intersect.
+
+Language: C#
+
+Solution:
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode DetectCycle(ListNode head) 
+    {
+        //Use tortoise and rabbit method to detect if there is cycle present.
+        if(head == null)
+            return null;
+        
+        ListNode tortoise = head;
+        ListNode rabbit = head;
+        
+        //This will keep track of intersecting node within the cycle.
+        ListNode temp = null;
+        
+        bool isCycleFound = false;
+        
+        while(rabbit != null && rabbit.next != null)
+        {
+            tortoise = tortoise.next;
+            rabbit = rabbit.next.next;
+            if(tortoise == rabbit)
+            {
+                temp = rabbit;
+                isCycleFound = true;
+                Console.WriteLine("Cycle found at node: "+temp.val);
+                break;
+            }
+        }
+        
+        //If we found a cycle in the list.
+        //We move the tortoise one step at a time until it intersects with the same node again.
+        //This will give us the length of the loop in the linked list.
+        int lengthOfCycle = 0;
+        if(isCycleFound == true)
+        {
+            tortoise = tortoise.next;
+            while(tortoise != temp)
+            {
+                tortoise = tortoise.next;
+                lengthOfCycle += 1;
+            }
+            
+            //Console.WriteLine("Length of Cycle is: "+ lengthOfCycle);
+            
+            //We create two pointers p1 and p2 at a distance of length of cycle.
+            ListNode p1 = head;
+            ListNode p2 = head;
+            for(int i = 0; i<lengthOfCycle+1; ++i)
+            {
+                p2 = p2.next;
+            }
+            //Console.WriteLine("P2 value: "+ p2.val);
+            
+            //Move them at same speed where they two intersect will be the starting point of the loop.
+            while(p1 != p2)
+            {
+                p1 = p1.next;
+                p2 = p2.next;
+            }
+            return p1;
+        }
+        return null;
+    }
+}

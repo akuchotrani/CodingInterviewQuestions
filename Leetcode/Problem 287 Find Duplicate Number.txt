@@ -1,0 +1,66 @@
+Leetcode problem 287 : Find Duplicate Number
+Description: 
+Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), 
+prove that at least one duplicate number must exist. Assume that there is only one duplicate number, 
+find the duplicate one.
+
+Example 1:
+
+Input: [1,3,4,2,2]
+Output: 2
+Example 2:
+
+Input: [3,1,3,4,2]
+Output: 3
+Note:
+
+You must not modify the array (assume the array is read only).
+You must use only constant, O(1) extra space.
+Your runtime complexity should be less than O(n2).
+There is only one duplicate number in the array, but it could be repeated more than once.
+
+Hint to solution : use two pointer method to solve this problem. The concept is similar to finding cycle in linked list 2. Problem 142 on leetcode.
+
+Language: C#
+
+Solution:
+
+public class Solution {
+    public int FindDuplicate(int[] nums) 
+    {
+        int result = -1;
+        //We will create two pointers and use tortoise and rabbit principle to detect the cycle in the array.
+        //Move tortoise one step at a time. tortoise = f(x)
+        //Move rabbit two step at a time. rabbit = f(f(x))
+        //Because of pigeon hole principle there will be one element that would be repeated.
+        //In this scenario tortoise and rabbit will meet. Thus we can prove that there is cycle in the array.
+        int tortoise = 0;
+        int rabbit = 0;
+        while(true)
+        {
+            tortoise = nums[tortoise];
+            rabbit = nums[nums[rabbit]];
+            
+            if(tortoise == rabbit)
+                break;
+        }
+        
+        //Finding the duplicate Element.
+        //We will create another pointer and move both tortoise and temp pointer one step at a time.
+        //The point where they meet will be the entry point in the loop and the duplicate element.
+        int temp = 0;
+        while(true)
+        {
+            temp = nums[temp];
+            tortoise = nums[tortoise];
+            if(temp == tortoise)
+            {
+                result = tortoise;
+                break;
+            }
+        }
+        return result;
+    }
+}
+
+//DetailedeExplaination to the problem and solution: http://keithschwarz.com/interesting/code/?dir=find-duplicate
