@@ -1,0 +1,56 @@
+128. Longest Consecutive Sequence
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
+Your algorithm should run in O(n) complexity.
+
+Hint to solve: Use a dictionary where key is the number and value is the range of the sequence.
+
+Language: C#
+
+Complexity : O(n)
+
+public class Solution {
+    public int LongestConsecutive(int[] nums) 
+    {
+        int maxConsecutiveRange = 0;
+        Dictionary<int,int> dict = new Dictionary<int,int>();
+        for( int i = 0; i<nums.Count(); ++i)
+        {
+            int currentNumber = nums[i];
+            if(dict.ContainsKey(currentNumber) == false)
+            {
+               //Check if the neighbour on left already exists. Get it's range.
+                int left = 0;
+                if(dict.ContainsKey(currentNumber-1) == true)
+                {
+                    left = dict[currentNumber-1];
+                }
+                
+                //Check if the neighbour on the right already exists. Get it's range.
+                int right = 0;
+                if(dict.ContainsKey(currentNumber + 1) == true)
+                {
+                    right = dict[currentNumber + 1];
+                }
+                
+                //The range of new number is the summation of range of neighbours and plus one.
+                int currentRange = left + right + 1;
+                dict.Add(currentNumber,currentRange);
+                
+                //Console.WriteLine("Number: "+ currentNumber+ " left: "+ left + " right: "+right+ " currentRange: "+ currentRange);
+                maxConsecutiveRange = Math.Max(maxConsecutiveRange,currentRange);
+                
+                //Update the range of boundary points of the consecutive numbers. 
+                if(dict.ContainsKey(currentNumber - 1))
+                {
+                    dict[currentNumber-left] = currentRange;
+                }
+                if(dict.ContainsKey(currentNumber+1))
+                {
+                    dict[currentNumber+right] = currentRange;
+                }
+            }
+        }
+        
+        return maxConsecutiveRange;
+    }
+}
