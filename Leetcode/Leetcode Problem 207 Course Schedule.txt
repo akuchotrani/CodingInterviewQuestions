@@ -1,0 +1,106 @@
+207. Course Schedule
+There are a total of n courses you have to take, labeled from 0 to n-1.
+
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
+
+Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
+
+Example 1:
+
+Input: 2, [[1,0]] 
+Output: true
+Explanation: There are a total of 2 courses to take. 
+             To take course 1 you should have finished course 0. So it is possible.
+Example 2:
+
+Input: 2, [[1,0],[0,1]]
+Output: false
+Explanation: There are a total of 2 courses to take. 
+             To take course 1 you should have finished course 0, and to take course 0 you should
+             also have finished course 1. So it is impossible.
+Note:
+
+The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.
+You may assume that there are no duplicate edges in the input prerequisites.
+
+
+
+HintToSolve : Use Topological Sort. DFS with visiting and visited node list.
+
+
+Language: C#
+
+
+public class Solution 
+{
+    
+    public void PrintGraph(List<List<int>> graph_matrix)
+    {
+        for(int i = 0; i<graph_matrix.Count(); ++i)
+        {
+            Console.WriteLine(i);
+            foreach(var nextCourse in graph_matrix[i])
+            {
+                Console.WriteLine("--"+ nextCourse);
+            }
+        }
+    }
+    
+    public bool CanFinish(int numCourses, int[][] prerequisites) 
+    {
+        List<List<int>> graph_matrix = new List<List<int>>();
+        List<bool> visitedNodes = new List<bool>();
+        for(int i = 0; i<numCourses; ++i)
+        {
+            List<int> row = new List<int>();
+            graph_matrix.Add(row);
+            visitedNodes.Add(false);
+        }
+    
+        for(int i = 0; i<prerequisites.Count(); ++i)
+        {
+            int currCourse = prerequisites[i][0];
+            int prevCourse = prerequisites[i][1];
+            //Console.WriteLine("PreviousCourse: "+ prevCourse);
+            graph_matrix[prevCourse].Add(currCourse);
+        }
+        
+        //PrintGraph(graph_matrix);
+        HashSet<int> visitingNodes = new HashSet<int>();
+        for(int i = 0; i<numCourses; ++i)
+        {
+            bool result = Dfs_Topological_Sort(i,graph_matrix,visitingNodes,visitedNodes);
+            if(result == true)
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public bool Dfs_Topological_Sort(int currentNode, List<List<int>> graph, HashSet<int> visitingNodes, List<bool> visitedNodes)
+    {
+        //Console.WriteLine("DFS currentNode: "+ currentNode);
+        
+        if(visitingNodes.Contains(currentNode))
+            return true;
+        
+        if(visitedNodes[currentNode] == true)
+            return false;
+        
+        visitingNodes.Add(currentNode);
+        
+        var childNodeList = graph[currentNode];
+        foreach(var child in childNodeList)
+        {
+            if(Dfs_Topological_Sort(child,graph,visitingNodes,visitedNodes))
+                return true;
+        }
+        
+        visitingNodes.Remove(currentNode);
+        visitedNodes[currentNode] = true;
+        
+        return false;
+    }
+}
