@@ -1,0 +1,50 @@
+7. Reverse Integer
+Easy
+
+2163
+
+3287
+
+Favorite
+
+Share
+Given a 32-bit signed integer, reverse digits of an integer.
+
+Example 1:
+
+Input: 123
+Output: 321
+Example 2:
+
+Input: -123
+Output: -321
+Example 3:
+
+Input: 120
+Output: 21
+Note:
+Assume we are dealing with an environment which could only store integers within the
+32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+
+Hint To Solve: Just take the unit digit number and keep adding to the previous result multiplied by 10.
+Note: Take care of the overflow edge case. Record the previous result to check the overflow condition.
+
+public class Solution {
+    public int Reverse(int x)
+    {
+        int result = 0;
+        int previousResult = 0;
+        while(x != 0)
+        {
+            int unitDigit = x%10;
+            previousResult = result;
+            result = result * 10 + unitDigit;
+            //Console.WriteLine("Result: "+ result);
+            //Console.WriteLine("PrevExpected: "+ (result-unitDigit)/10);
+            if(previousResult != (result-unitDigit)/10)
+                return 0;
+            x = x/10;
+        }
+        return result;
+    }
+}
