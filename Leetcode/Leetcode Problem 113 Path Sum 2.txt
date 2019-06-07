@@ -1,0 +1,66 @@
+113. Path Sum II
+Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Given the below binary tree and sum = 22,
+
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \    / \
+7    2  5   1
+Return:
+
+[
+   [5,4,11,2],
+   [5,8,4,5]
+]
+
+
+Hint to solve: Use recursion for tree problem. Caution: values in c# are passed as reference so create a copy of list of path for each iteration.
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    
+    public void PathSumRecursive(TreeNode root, int sum, List<int> Path,  List<IList<int>> result)
+    {
+        if(root == null)
+        {
+            return;
+        }
+        //Console.WriteLine("Node: "+ root.val);
+        
+        var localList = new List<int>(Path);
+
+        if(root.left == null && root.right == null && sum - root.val == 0)
+        {
+            //Console.WriteLine("Solution Found");
+            result.Add(localList);
+        }
+        
+        localList.Add(root.val);
+        PathSumRecursive(root.left,sum-root.val,localList,  result);
+        PathSumRecursive(root.right,sum-root.val,localList, result);
+    }
+    
+    public IList<IList<int>> PathSum(TreeNode root, int sum) 
+    {
+        List<IList<int>> result = new List<IList<int>>();
+        List<int> path = new List<int>();
+        PathSumRecursive(root,sum,path, result);
+        return result;
+    }
+}
