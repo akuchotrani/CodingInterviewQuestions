@@ -1,0 +1,53 @@
+112. Path Sum
+
+Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Given the below binary tree and sum = 22,
+
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1
+return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
+
+Hint To Solve: Use recursion for tree problems. Caution a node with no children is only considered as a left node. Edge case [1,2] with sum 1 should considered false.
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    
+    public bool HasPathRecursive(TreeNode root, int targetSum, int currentSum)
+    {
+        if(root == null)
+            return false;
+        
+        if(root.left == null && root.right == null)
+        {
+            if(currentSum + root.val == targetSum)
+                return true;
+            else
+                return false;
+        }
+        
+        return HasPathRecursive(root.left, targetSum, root.val+currentSum) || HasPathRecursive(root.right,targetSum, root.val+currentSum);
+    }
+    
+    public bool HasPathSum(TreeNode root, int sum) 
+    {
+        return HasPathRecursive(root,sum, 0);
+    }
+}
