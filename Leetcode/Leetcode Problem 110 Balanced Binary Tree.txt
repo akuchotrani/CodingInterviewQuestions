@@ -1,0 +1,78 @@
+110. Balanced Binary Tree
+Given a binary tree, determine if it is height-balanced.
+
+For this problem, a height-balanced binary tree is defined as:
+
+a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+
+Example 1:
+
+Given the following tree [3,9,20,null,null,15,7]:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+Return true.
+
+Example 2:
+
+Given the following tree [1,2,2,3,3,null,null,4,4]:
+
+       1
+      / \
+     2   2
+    / \
+   3   3
+  / \
+ 4   4
+
+
+Hint To Solve: Recrusive DFS call for left and right node to get the height of each node.
+If any subnode is unbalanced directly return -1
+Otherwise take the max of left and right subtree height + 1
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution 
+{
+    public int DFSBalancedBinaryTree(TreeNode root)
+    {
+        if(root == null)
+            return 0;
+        
+        int left = DFSBalancedBinaryTree(root.left);
+        if(left == -1)
+            return -1;
+        
+        int right = DFSBalancedBinaryTree(root.right);
+        if(right == -1)
+            return -1;
+        
+        int difference = Math.Abs(left - right);
+        if(difference > 1)
+            return -1;
+        
+        //Console.WriteLine("Node value: "+ root.val + " height: "+ (Math.Max(left,right) + 1));
+        return Math.Max(left,right) + 1;
+    }
+    
+    
+    public bool IsBalanced(TreeNode root) 
+    {
+        int result = DFSBalancedBinaryTree(root);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+}
