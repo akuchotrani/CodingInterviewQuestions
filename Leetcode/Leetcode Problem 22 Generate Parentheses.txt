@@ -1,0 +1,130 @@
+
+22. Generate Parentheses
+
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+For example, given n = 3, a solution set is:
+
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+
+
+Hint to solve: recurisvely call the function to generate the combination add them to solution when the total N is exausted.
+Solution 1: Faster. Two recursive calls maintining the left and right bracket count.
+
+public class Solution 
+{
+    public IList<string> GenerateParenthesis(int n) 
+    {
+        string currentCombination="";
+        
+        int totalLeftParenthesis = n;
+        int toalRightParenthesis = 0;
+        
+        IList<string> result;
+        
+        List<string> temp = new List<string>();
+        GenerateParenthesisRecursive(temp,currentCombination,totalLeftParenthesis,toalRightParenthesis);
+        
+        
+        result = temp;
+        
+        return result;
+        
+    }
+    
+
+    public void GenerateParenthesisRecursive(IList<string> result,string currentCombination, int totalLeftParenthesis, int totalRightParenthesis)
+    {
+        if(totalLeftParenthesis == 0 && totalRightParenthesis == 0)
+        {
+            result.Add(currentCombination);
+            return;
+        }
+        
+        if(totalRightParenthesis > 0)
+        {
+            GenerateParenthesisRecursive(result,currentCombination+")",totalLeftParenthesis,totalRightParenthesis - 1);
+        }
+        
+        if(totalLeftParenthesis > 0)
+        {
+            GenerateParenthesisRecursive(result,currentCombination+"(", totalLeftParenthesis - 1, totalRightParenthesis + 1);
+        }
+    }
+}
+
+
+Solution 2: Slower. Generates all the combination and then checks whether the combination was a valid one 
+by checking matching closing bracket for every opening bracket.
+
+public class Solution {
+    
+    
+    public void AllParenthesis(int x, string currentPattern,ref List<string> AllCombinations)
+    {
+        if(x == 0)
+        {
+            AllCombinations.Add(currentPattern);
+            return;
+        }
+        AllParenthesis(x-1,currentPattern+"(",ref AllCombinations);
+        AllParenthesis(x-1,currentPattern+")",ref AllCombinations);
+    }
+    
+    public bool IsValidParenthesis(string pattern)
+    {
+        Stack<char> myStack = new Stack<char>();
+        
+        for(int i = 0; i<pattern.Count(); ++i)
+        {
+            if(pattern[i] == '(')
+            {
+                myStack.Push(pattern[i]);
+            }
+            
+            if(pattern[i]==')')
+            {
+                if(myStack.Count() == 0)
+                    return false;
+                
+                char topCharacter = myStack.Peek();
+                if(topCharacter == '(')
+                    myStack.Pop();
+                else
+                    return false;
+            }
+        }
+        
+        if(myStack.Count() == 0)
+            return true;
+        else
+            return false;
+        
+    }
+    
+    public IList<string> GenerateParenthesis(int n) 
+    {
+        List<string> AllCombinations = new List<string>();
+        AllParenthesis(n*2,"",ref AllCombinations);
+        
+        IList<string> result = new List<string>();
+
+        foreach( var combination in AllCombinations)
+        {
+            //Console.WriteLine(combination);
+            if(IsValidParenthesis(combination))
+            {
+                result.Add(combination);
+            }
+        }
+        return result;
+        
+    }
+}
+
