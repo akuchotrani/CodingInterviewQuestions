@@ -1,0 +1,74 @@
+
+937. Reorder Log Files
+
+You have an array of logs.  Each log is a space delimited string of words.
+
+For each log, the first word in each log is an alphanumeric identifier.  Then, either:
+
+Each word after the identifier will consist only of lowercase letters, or;
+Each word after the identifier will consist only of digits.
+We will call these two varieties of logs letter-logs and digit-logs.  It is guaranteed that each log has at least one word after its identifier.
+
+Reorder the logs so that all of the letter-logs come before any digit-log.  The letter-logs are ordered lexicographically ignoring identifier, with the identifier used in case of ties.  The digit-logs should be put in their original order.
+
+Return the final order of the logs.
+
+ 
+
+Example 1:
+
+Input: ["a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"]
+Output: ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
+ 
+
+Note:
+
+0 <= logs.length <= 100
+3 <= logs[i].length <= 100
+logs[i] is guaranteed to have an identifier, and a word after the identifier.
+
+
+
+Hint to solve: Use the lambda sort function to sort the contents after identifier.
+Language: c#
+
+public class Solution {
+    public string[] ReorderLogFiles(string[] logs) 
+    {
+        List<string> digitLogs = new List<string>();
+        List<string> letterLogs = new List<string>();
+        
+        //Splitting into two list for digit logs and letter logs.
+        //Edge case: some digits are out of range of int hence using BigInteger.
+        foreach(var log in logs)
+        {
+            var tokenizedString = log.Split(' ');
+            if(BigInteger.TryParse(tokenizedString[1],out BigInteger n))
+            {
+                digitLogs.Add(log);
+            }
+            else
+            {
+                letterLogs.Add(log);
+            }
+        }
+        
+        //Sorting the letter logs by the first by identifier.
+        letterLogs.Sort();
+        
+        //Sorting the letter logs by the contents after the identifier using lambda function in sort.
+        letterLogs.Sort((a,b)=> 
+                           {
+                               string first = a.Substring(a.IndexOf(' ') + 1);
+                               string second = b.Substring(b.IndexOf(' ')+ 1);
+                               //Console.WriteLine("First: "+ first+ " \nSecond:"+ second);
+                               //Console.WriteLine("Result: "+ first.CompareTo(second));
+                               return first.CompareTo(second);
+                           });
+        
+        //Combining the range.
+        letterLogs.AddRange(digitLogs);
+        
+        return letterLogs.ToArray();
+    }
+}
