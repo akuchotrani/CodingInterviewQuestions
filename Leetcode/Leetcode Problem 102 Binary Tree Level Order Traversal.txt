@@ -1,0 +1,71 @@
+102. Binary Tree Level Order Traversal
+Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+
+For example:
+Given binary tree [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its level order traversal as:
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+
+
+
+Hint to solve: Use BFS for level order traversal. Every level create a new list and add the nodes for that level until queue is empty.
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution 
+{
+    
+    public IList<IList<int>> LevelOrder(TreeNode root) 
+    {
+        IList<IList<int>> result = new List<IList<int>>();
+        
+        if(root == null)
+            return result;
+        
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+        
+        while(queue.Count() != 0)
+        {
+            List<TreeNode> currentLevel = new List<TreeNode>();
+            while(queue.Count() != 0)
+            {
+                TreeNode node = queue.Dequeue();
+                currentLevel.Add(node);
+            }
+            
+            List<int> row = new List<int>();
+            foreach(var node in currentLevel)
+            {
+                row.Add(node.val);
+                
+                var leftNode = node.left;
+                var rightNode = node.right;
+                
+                if(leftNode != null)
+                    queue.Enqueue(leftNode);
+                
+                if(rightNode != null)
+                    queue.Enqueue(rightNode);
+            }
+            result.Add(row);
+        }
+        
+        return result;
+    }
