@@ -1,0 +1,73 @@
+32. Longest Valid Parentheses
+Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+
+Example 1:
+
+Input: "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()"
+Example 2:
+
+Input: ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()"
+
+
+Hint to solve: We need to take care of the nesting of brackets.
+Maintain the count for every level. 
+For any matching bracket, update the current level counter to 2(the bracket matched) + currentLevel + nextHigherLevel.
+Reset the next higher level since you are already including the count to the current level.
+
+The end result will be the max of all the levels.
+
+public class Solution {
+    public int LongestValidParentheses(string s)
+    {
+        Stack<char> myStack = new Stack<char>();
+        
+        //Max nested level could be the total length of string. If all the characters are '('
+        int[] Level = new int[s.Length];
+        
+        foreach(char bracket in s)
+        {
+            if(bracket == '(')
+            {
+                myStack.Push(bracket);
+            }
+            else
+            {
+                if(myStack.Count() > 0 && myStack.Peek() == '(')
+                {
+                    myStack.Pop();
+                    int currentLevel = myStack.Count();
+                    //The total at current nested level is nested level + one higher level + 2(current bracket size which matched)
+                    int updatedCount = Level[currentLevel] + Level[currentLevel+1] + 2;
+                    
+                    //Reset the next level since we already counted the values
+                    Level[currentLevel + 1] = 0;
+                    Level[currentLevel] = updatedCount;
+                }
+                else
+                {
+                    myStack.Push(')');
+                }
+            }
+        }
+        
+        
+        // //Debug Information at each level
+        // int counter = 0;
+        // foreach(int level in Level)
+        // {
+        //     Console.WriteLine("level: "+ counter+" maxValues: "+ level);
+        //     counter += 1;
+        // }
+        
+        if(Level.Count() ==  0)
+        {
+            return 0;
+        }
+        
+        return Level.Max();
+    }
+}
