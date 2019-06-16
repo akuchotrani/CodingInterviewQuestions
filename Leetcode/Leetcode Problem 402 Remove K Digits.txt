@@ -1,0 +1,97 @@
+402. Remove K Digits
+Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+
+Note:
+The length of num is less than 10002 and will be ≥ k.
+The given num does not contain any leading zero.
+Example 1:
+
+Input: num = "1432219", k = 3
+Output: "1219"
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+Example 2:
+
+Input: num = "10200", k = 1
+Output: "200"
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+Example 3:
+
+Input: num = "10", k = 2
+Output: "0"
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+
+
+Hint to solve: Use recursion.
+Choose the min number from the left side of the string of given K range.
+Append this min number to the result. 
+Forget the previous numbers in the K range. By creating a substring from min number index +1 to the end of number.
+Next recursive call pass this new substring and k-minIndex(since the substring already deleted those characters)
+
+
+
+public class Solution 
+{
+    public void RemoveKdigitsRecursive(string num, int k, ref string result)
+    {
+        //When all the digits are removed. Append the remainig number string.
+        if(k == 0)
+        {
+            result += num;
+            return;
+        }
+        
+        //If there are more characters to remove than the length of the num. Append nothing.
+        if(num.Length <= k)
+            return;
+        
+        //Find the smallest character index from n+1 beginning characters.
+        int minIndex = 0;
+        for(int i = 0; i<=k; ++i)
+        {
+            if(num[i]<num[minIndex])
+            {
+                minIndex = i;
+            }
+        }
+        
+        //Append this smallest character to the result.
+        result += num[minIndex];
+        
+        //Forget the previous characters before the minIndex character.
+        string subStr = num.Substring(minIndex+1);
+        
+        //Console.WriteLine("Result: "+ result+" subStr:"+ subStr);
+        RemoveKdigitsRecursive(subStr,k-minIndex,ref result);
+        
+    }
+    public string RemoveKdigits(string num, int k) 
+    {
+        string result = "";
+        RemoveKdigitsRecursive(num,k, ref result);
+        
+        //Remove the leading zeros in string.
+        bool isDigitEncountered = false;
+        int zeroCounter = 0;
+        for(int i = 0; i<result.Length; ++i)
+        {
+            if(isDigitEncountered == false && result[i] == '0')
+            {
+                zeroCounter += 1;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(zeroCounter > 0)
+        {
+            result = result.Remove(0,zeroCounter);
+        }
+        
+        //If everything was deleted then return 0
+        if(result =="")
+            return "0";
+        
+        return result;
+    }
+}
