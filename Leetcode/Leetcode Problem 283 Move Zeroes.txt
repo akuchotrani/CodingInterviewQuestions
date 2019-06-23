@@ -1,0 +1,72 @@
+283. Move Zeroes
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Example:
+
+Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
+Note:
+
+You must do this in-place without making a copy of the array.
+Minimize the total number of operations.
+
+public class Solution {
+    public void MoveZeroes(int[] nums) 
+    {
+        if(nums == null || nums.Count() == 1)
+            return;
+        
+        
+        //Solution 1
+        int zeroCounter = 0;
+        int leftPointer = 0;
+        
+        for(int i = 0; i<nums.Count(); ++i)
+        {
+            if(nums[i] == 0)
+            {
+                zeroCounter += 1;
+            }
+            else
+            {
+                nums[leftPointer] = nums[i];
+                leftPointer += 1;
+            }
+            
+        }
+        
+        //Console.WriteLine("Left pointer: "+ leftPointer);
+        for(int i = 0; i<zeroCounter; ++i)
+        {
+            nums[leftPointer] = 0;
+            leftPointer += 1;
+            
+        }
+
+//Solution 2
+//
+//         int left  = 0;
+//         int right = 1;
+        
+//         while(right < nums.Count())
+//         {
+//             if(nums[left] == 0 && nums[right] == 0)
+//             {
+//                 right += 1;
+//             }
+//             else if(nums[left] == 0 && nums[right] != 0)
+//             {
+//                 nums[left] = nums[right];
+//                 nums[right] = 0;
+//                 left += 1;
+//                 right += 1;
+//             }
+//             else
+//             {
+//                 left += 1;
+//                 right += 1;
+//             }
+//         }
+        
+    }
+}
