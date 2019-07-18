@@ -1,0 +1,59 @@
+101. Symmetric Tree
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
+
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+ 
+
+But the following [1,2,2,null,3,null,3] is not:
+
+    1
+   / \
+  2   2
+   \   \
+   3    3
+ 
+
+Note:
+Bonus points if you could solve it both recursively and iteratively.
+
+
+Hint to solve: Make a recurive function that checks for until both nodes are null, one of the nodes is null. Make recurive call for left,right and right,left with comparing the current two parent's value.
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    
+    bool isMirror(TreeNode leftNode, TreeNode rightNode)
+    {
+        if(leftNode == null && rightNode == null)
+            return true;
+        
+        if(leftNode == null || rightNode == null)
+            return false;
+               
+        return (leftNode.val == rightNode.val) && isMirror(leftNode.left,rightNode.right) && isMirror(leftNode.right,rightNode.left);
+    }
+    
+    public bool IsSymmetric(TreeNode root) 
+    {
+        if(root == null)
+            return true;
+        
+        return isMirror(root.left,root.right);
+    }
+    
+}
