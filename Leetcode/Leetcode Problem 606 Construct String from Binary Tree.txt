@@ -1,0 +1,81 @@
+606. Construct String from Binary Tree
+You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.
+
+The null node needs to be represented by empty parenthesis pair "()". And you need to omit all the empty parenthesis pairs that don't affect the one-to-one mapping relationship between the string and the original binary tree.
+
+Example 1:
+Input: Binary tree: [1,2,3,4]
+       1
+     /   \
+    2     3
+   /    
+  4     
+
+Output: "1(2(4))(3)"
+
+Explanation: Originallay it needs to be "1(2(4)())(3()())", 
+but you need to omit all the unnecessary empty parenthesis pairs. 
+And it will be "1(2(4))(3)".
+Example 2:
+Input: Binary tree: [1,2,3,null,4]
+       1
+     /   \
+    2     3
+     \  
+      4 
+
+Output: "1(2()(4))(3)"
+
+Explanation: Almost the same as the first example, 
+except we can't omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.
+
+
+Hint to solve : Recurse left and right node and add braces when needed. Just make sure that if one of the node is not null and left node is null then have empty brackets in the result to null value.
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution 
+{
+    public void PrintTreeRecursive(TreeNode node,ref string result)
+    {
+        if(node != null)
+        {
+            result += node.val;
+            if(node.left != null || node.right != null)
+            {
+                if(node.left != null)
+                {
+                    result += "(";
+                    PrintTreeRecursive(node.left,ref result);
+                    result += ")";
+                }
+                else
+                {
+                    result += "()";
+                }
+
+                if(node.right != null)
+                {
+                    result += "(";
+                    PrintTreeRecursive(node.right, ref result);
+                    result += ")";
+
+                }
+            }
+        }
+    }
+    
+    public string Tree2str(TreeNode t) 
+    {
+        string result = "";
+        PrintTreeRecursive(t,ref result);
+        return result;
+    }
+}
