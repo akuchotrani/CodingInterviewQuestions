@@ -248,10 +248,6 @@ public class Solution
                     
                     //Move to next row and try to place queen.
                     bool solutionFound = placeQueen(row+1,ref binaryGrid, totalQueens);
-                    if(solutionFound == true)
-                    {
-                        //return true;
-                    }
                     
                     //If we can't place queens in future. Move this queen and try another position.
                     //Unplace this queen.
