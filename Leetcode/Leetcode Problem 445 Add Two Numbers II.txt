@@ -1,0 +1,85 @@
+445. Add Two Numbers II
+You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+Follow up:
+What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
+
+Example:
+
+Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 8 -> 0 -> 7
+
+
+Hint To Solve: Use two stacks.
+keep track of current node, created node and head.
+Push the current node and head back every step.
+Take care of the special case.
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    {
+        Stack<int> firstStack = new Stack<int>();
+        Stack<int> secondStack = new Stack<int>();
+
+        while(l1 != null)
+        {
+            firstStack.Push(l1.val);
+            l1 = l1.next;
+        }
+
+        while(l2 != null)
+        {
+            secondStack.Push(l2.val);
+            l2 = l2.next;
+        }
+
+        int carry = 0;
+        ListNode currentNode = null;
+        ListNode listHead = null;
+        while(firstStack.Count() > 0 || secondStack.Count() > 0)
+        {
+            int total = carry;
+            if(firstStack.Count() > 0)
+            {
+                total += firstStack.Pop();
+            }
+
+            if(secondStack.Count() > 0)
+            {
+                total += secondStack.Pop();
+            }
+
+            if(total > 9)
+                carry = 1;
+            else
+                carry = 0;
+
+            ListNode createdNode = new ListNode(total%10);
+            createdNode.next = currentNode;
+            currentNode = createdNode;
+            listHead = currentNode;
+        }
+
+        //Special case when there is still a carry remaining
+        if(carry == 1)
+        {
+            ListNode createdNode = new ListNode(1);
+            createdNode.next = currentNode;
+            currentNode = createdNode;
+            listHead = currentNode;
+        }
+
+        return listHead;
+    }
+}
