@@ -1,0 +1,111 @@
+234. Palindrome Linked List
+
+Given a singly linked list, determine if it is a palindrome.
+
+Example 1:
+
+Input: 1->2
+Output: false
+Example 2:
+
+Input: 1->2->2->1
+Output: true
+Follow up:
+Could you do it in O(n) time and O(1) space?
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution 
+{
+    public ListNode ReverseList(ListNode head)
+    {
+        ListNode previous = null;
+        ListNode current = head;
+        ListNode next = head.next;
+        
+        while(current != null)
+        {
+            current.next = previous;
+            previous = current;
+            current = next;
+            if(current != null)
+                next = current.next;
+        }
+        
+        //Printing the reversed List
+        // ListNode temp = previous;
+        // while(temp != null)
+        // {
+        //     Console.WriteLine(temp.val);
+        //     temp = temp.next;
+        // }
+        
+        return previous;
+    }
+    
+    
+    public bool IsPalindrome(ListNode head) 
+    {
+        if(head == null || head.next == null)
+            return true;
+        
+        //Step 1: Count total nodes in the linkedlist.
+        ListNode start = head;
+        int totalNodes = 0;
+        while(start != null)
+        {
+            totalNodes += 1;
+            start = start.next;
+        }
+        
+        //Step 2: Travel to the middle of the linkedlist.
+        int middle = totalNodes/2;
+        ListNode firstListPtr = head;
+        ListNode middlePtr = head;
+        for(int i = 0; i<middle; ++i)
+        {
+            middlePtr = middlePtr.next;
+        }
+        
+        //Step3: Decide the start ptr for the second half of linked list.
+        //If odd: then move two pos. If even move one pos.
+        ListNode secondListPtr = null;
+        if(totalNodes % 2 == 0)
+        {
+            secondListPtr = middlePtr;
+        }
+        else
+        {
+            secondListPtr = middlePtr.next;
+        }
+        
+        //Step4: Reverse the second half in constant space by flipping pointers.
+        secondListPtr = ReverseList(secondListPtr);
+        
+        
+        //Step5: Compare each node value.
+        while(secondListPtr != null)
+        {
+            //Console.WriteLine("Comparing : "+ firstListPtr.val + " "+ secondListPtr.val);
+
+            if(firstListPtr.val != secondListPtr.val)
+            {
+                return false;
+            }
+            else
+            {
+                secondListPtr = secondListPtr.next;
+                firstListPtr = firstListPtr.next;
+            }
+        }
+        
+        return true;
+    }
+}
