@@ -1,0 +1,133 @@
+85. Maximal Rectangle
+Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+
+Example:
+
+Input:
+[
+  ["1","0","1","0","0"],
+  ["1","0","1","1","1"],
+  ["1","1","1","1","1"],
+  ["1","0","0","1","0"]
+]
+Output: 6
+
+
+Hint to solve: Use dynamic programming.
+Go through each row. If the current cell value is non zero add the previous row value.
+Calculate the max area of a rectange of a histogram for each row.
+
+
+public class Solution
+{
+    
+    public int CalculateMaxAreaHistogram(int[] row)
+    {
+        if(row.Count() == 0)
+            return 0;
+        if(row.Count() == 1)
+            return row[0];
+        
+        int maxAreaHistogram = 0;
+        Stack<int> heightStack = new Stack<int>();
+        Stack<int> positionStack = new Stack<int>();
+        heightStack.Push(row[0]);
+        positionStack.Push(0);
+        
+        for(int i = 1; i<row.Count(); ++i)
+        {
+            if(heightStack.Count() == 0 && positionStack.Count() == 0)
+            {
+                heightStack.Push(row[i]);
+                positionStack.Push(i);
+            }
+            else if(row[i] > heightStack.Peek())
+            {
+                heightStack.Push(row[i]);
+                positionStack.Push(i);
+            }
+            else if(row[i] < heightStack.Peek())
+            {
+                int temp_position = positionStack.Peek();
+                while(heightStack.Count() > 0 && positionStack.Count() > 0 &&
+                     heightStack.Peek() > row[i])
+                {
+                    int area = heightStack.Peek() * (i - positionStack.Peek());
+                    temp_position = positionStack.Peek();
+                    heightStack.Pop();
+                    positionStack.Pop();
+                    
+                    if(area > maxAreaHistogram)
+                        maxAreaHistogram = area;
+                }
+                
+                heightStack.Push(row[i]);
+                positionStack.Push(temp_position);
+            }
+        }
+        
+        while(heightStack.Count() > 0 && positionStack.Count() > 0)
+        {
+            int area = heightStack.Peek() * (row.Count() - positionStack.Peek());
+            heightStack.Pop();
+            positionStack.Pop();
+                    
+            if(area > maxAreaHistogram)
+                maxAreaHistogram = area;
+        }
+        
+        // Console.WriteLine("For row: ");
+        // foreach(var cell in row)
+        // {
+        //     //Console.Write(cell + " ");
+        // }
+        // //Console.WriteLine("maxArea: "+ maxAreaHistogram);
+        return maxAreaHistogram;
+        
+    }
+    
+    
+    public int MaximalRectangle(char[][] matrix) 
+    {
+        int maxArea = 0;
+        
+        int[][] grid = new int[matrix.Count()][];
+        
+        for(int i = 0; i<matrix.Count(); ++i)
+        {
+            grid[i] = new int[matrix[i].Count()]; 
+            for(int j = 0; j<matrix[i].Count(); ++j)
+            {
+                grid[i][j] = matrix[i][j] - 48;
+            }
+        }
+        
+        //Go through each row in the matrix
+        for(int row = 0 ; row < grid.Count(); ++row)
+        {
+            int[] currentGridRow = grid[row];
+            if(row > 0)
+            {
+                for(int col = 0; col < grid[row].Count(); ++col)
+                {
+                    if(grid[row][col] == 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        currentGridRow[col] += grid[row-1][col];
+                    }
+                }
+            }
+            
+            //For current row calculate the area of a histogram
+            int maxAreaHistogram = CalculateMaxAreaHistogram(currentGridRow);
+            if(maxAreaHistogram > maxArea)
+                maxArea = maxAreaHistogram;
+        }
+        
+        return maxArea;
+        
+    }
+}
