@@ -1,0 +1,58 @@
+46. Permutations
+
+Given a collection of distinct integers, return all possible permutations.
+
+Example:
+
+Input: [1,2,3]
+Output:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+
+Hint to solve: Use recrusive function. Create a copy of new list and current list.
+Time and space complexity : n!
+
+public class Solution 
+{
+    public IList<IList<int>> result;
+    public Solution()
+    {
+        result = new List<IList<int>>();
+    }
+    
+    public void PermuteRecursive(List<int> currentList, List<int> remainingList)
+    {
+        if(remainingList.Count() == 0)
+        {
+            result.Add(currentList);
+            return;
+        }
+        
+        
+        
+        for(int i = 0; i<remainingList.Count(); ++i)
+        {
+            List<int> tempCurrent = new List<int>(currentList);
+            tempCurrent.Add(remainingList[i]);
+            
+            List<int> tempRemaining = new List<int>(remainingList);
+            tempRemaining.RemoveAt(i);
+            
+            PermuteRecursive(tempCurrent, tempRemaining);
+        }
+        
+    }
+    
+    
+    public IList<IList<int>> Permute(int[] nums) 
+    {
+        PermuteRecursive(new List<int>(), nums.ToList());
+        return result;
+    }
+}
