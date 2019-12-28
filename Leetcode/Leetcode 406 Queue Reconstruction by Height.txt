@@ -1,0 +1,59 @@
+406. Queue Reconstruction by Height
+
+Suppose you have a random list of people standing in a queue. Each person is described by a pair of integers (h, k), where h is the height of the person and k is the number of people in front of this person who have a height greater than or equal to h. Write an algorithm to reconstruct the queue.
+
+Note:
+The number of people is less than 1,100.
+
+Example
+
+Input:
+[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]
+
+Output:
+[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
+
+
+Hint to solve: First sort elements by height in descending order.
+If height is same sort by number of people.
+Insert tallest to shortes element at the index represented by number of people.
+
+
+public class Solution 
+{
+    //First sort by height in descending order. If height is same then sort by number of people ascending.
+    public int ComparatorForHeightAndPeople(int[] first, int[] second)
+    {
+        //If height is same compare number of people in front.
+        if(first[0].CompareTo(second[0]) == 0)
+        {
+            return first[1].CompareTo(second[1]);
+        }
+        
+        return -1*first[0].CompareTo(second[0]);
+    }
+    
+    public int[][] ReconstructQueue(int[][] people) 
+    {
+        var result = new int[people.Length][];
+        
+        List<List<int>> resultList = new List<List<int>>();
+        
+        //Sort by height and then by number of people. O(nlog(n))
+        Array.Sort(people,ComparatorForHeight);
+        
+        //Insert elements at the index. O(n^2) operation.
+        for(int i = 0; i<people.Length; ++i)
+        {
+            resultList.Insert(people[i][1],people[i].ToList());
+        }
+        
+        
+        for(int i = 0; i<resultList.Count(); ++i)
+        {
+            people[i] = resultList[i].ToArray();
+        }
+        
+        return people;
+    }
+}
