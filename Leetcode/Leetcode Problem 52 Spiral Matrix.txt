@@ -1,0 +1,90 @@
+54. Spiral Matrix
+Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+
+Example 1:
+
+Input:
+[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+Output: [1,2,3,6,9,8,7,4,5]
+Example 2:
+
+Input:
+[
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9,10,11,12]
+]
+Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+
+
+Hint to solve: Create 4 pointers. row_start, row_end, col_start, col_end.
+Traverse in 4 directions. Update the pointers.
+
+Edge case: inside the if condition check the size of the result.
+
+public class Solution 
+{
+    
+    public void DebugPrintList(IList<int> result)
+    {
+        foreach(var item in result)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
+    
+    public IList<int> SpiralOrder(int[][] matrix) 
+    {
+        IList<int> result = new List<int>();
+
+        if(matrix == null || matrix.Count() == 0)
+            return result;
+        
+        int row_start = 0;
+        int col_start = 0;
+        int row_end = matrix.Length;
+        int col_end = matrix[0].Length;
+        
+        int totalElements = row_end*col_end;
+        
+        
+        while(result.Count() != totalElements)
+        {
+
+            //Go from left to right. Record start row.
+            for(int i = row_start; i<col_end && result.Count() != totalElements; ++i)
+            {
+                result.Add(matrix[row_start][i]);
+            }
+            row_start += 1;
+            
+            //Go from top to down. Record the last col.
+            for(int i = row_start; i< row_end && result.Count() != totalElements; ++i)
+            {
+                result.Add(matrix[i][col_end-1]);
+            }
+            col_end -= 1;
+            
+            //Go from right to left. Record the last row.
+            for(int i = col_end-1; i >= col_start && result.Count() != totalElements; --i)
+            {
+                result.Add(matrix[row_end-1][i]);
+            }
+            row_end -= 1;
+            
+            //Go from bottom to top. Record the start col.
+            for(int i = row_end-1; i>= row_start && result.Count() != totalElements; --i)
+            {
+                result.Add(matrix[i][col_start]);
+            }
+            col_start += 1;
+        }
+        
+        return result;
+    }
+}
