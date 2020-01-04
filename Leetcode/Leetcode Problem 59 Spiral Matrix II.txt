@@ -1,0 +1,71 @@
+59. Spiral Matrix II
+Given a positive integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+
+Example:
+
+Input: 3
+Output:
+[
+ [ 1, 2, 3 ],
+ [ 8, 9, 4 ],
+ [ 7, 6, 5 ]
+]
+
+Hint to solve: Use 4 pointers for row_min, row_max, col_min, col_max
+Loop into 4 directions to fill up the matrix.
+
+public class Solution 
+{
+    public int[][] GenerateMatrix(int n) 
+    {
+        //Initialize the result matrix with all zeros.
+        int[][] result = new int[n][];
+        for(int i = 0; i<n; ++i)
+        {
+            result[i] = new int[n];
+        }
+        
+        int row_min = 0;
+        int row_max = n-1;
+        int col_min = 0;
+        int col_max = n-1;
+        
+        int counter = 0;
+        while(counter != n*n)
+        {
+            //Fill the matrix from left to right
+            for(int i = row_min; i<= col_max; ++i)
+            {
+                counter += 1;
+                result[row_min][i] = counter;
+            }
+            row_min += 1;
+            
+            //Fill the matrix from top to bottom
+            for(int i = row_min; i<= row_max; ++i)
+            {
+                counter += 1;
+                result[i][row_max] = counter;
+            }
+            col_max -= 1;
+            
+            //Fill the matrix from right to left
+            for(int i = col_max; i>= col_min; --i)
+            {
+                counter += 1;
+                result[row_max][i] = counter;
+            }
+            row_max -= 1;
+            
+            //Fill the matrix from bottom to top
+            for(int i = row_max; i>= row_min; --i)
+            {
+                counter += 1;
+                result[i][col_min] = counter;
+            }
+            col_min += 1;
+        }
+        
+        return result;
+    }
+}
