@@ -1,0 +1,93 @@
+
+1143. Longest Common Subsequence
+Given two strings text1 and text2, return the length of their longest common subsequence.
+
+A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, "ace" is a subsequence of "abcde" while "aec" is not). A common subsequence of two strings is a subsequence that is common to both strings.
+
+ 
+
+If there is no common subsequence, return 0.
+
+Example 1:
+
+Input: text1 = "abcde", text2 = "ace" 
+Output: 3  
+Explanation: The longest common subsequence is "ace" and its length is 3.
+Example 2:
+
+Input: text1 = "abc", text2 = "abc"
+Output: 3
+Explanation: The longest common subsequence is "abc" and its length is 3.
+Example 3:
+
+Input: text1 = "abc", text2 = "def"
+Output: 0
+Explanation: There is no such common subsequence, so the result is 0.
+ 
+
+Constraints:
+
+1 <= text1.length <= 1000
+1 <= text2.length <= 1000
+The input strings consist of lowercase English characters only.
+
+
+
+Hint to solve: Dynamic programming.
+
+
+
+public class Solution 
+{
+    public int LongestCommonSubsequence(string text1, string text2) 
+    {
+        if(text1.Length == 0 || text2.Length == 0)
+            return 0;
+
+        //Appending an empty character in the beginning. 
+        //The first row and col will be initialized to 0 always.
+        string word1 = "-" + text1;
+        string word2 = "-" + text2;
+        
+        //Creating a matrix and initializing all the cells to zero.
+        int [][] matrix = new int[word1.Length][];
+        for(int i = 0; i<word1.Length; ++i)
+        {
+            matrix[i] = new int[word2.Length];
+            for(int j = 0; j<word2.Length; ++j)
+            {
+                matrix[i][j] = 0;
+            }
+        }
+        
+        //If the current character matches then we look diagonally and increament the counter
+        //If the current character does not match then we take the max of left and top cell.
+        for(int i = 1; i<word1.Length; ++i)
+        {
+            for(int j = 1; j<word2.Length; ++j)
+            {
+                if(word1[i] == word2[j])
+                {
+                    matrix[i][j] = matrix[i-1][j-1] + 1;
+                }
+                else
+                {
+                    matrix[i][j] = Math.Max(matrix[i-1][j], matrix[i][j-1]);
+                }
+            }
+        }
+        
+        //Print matrix for debugging.
+        // for(int i = 0; i<word1.Length; ++i)
+        // {
+        //     for(int j = 0; j<word2.Length; ++j)
+        //     {
+        //         Console.Write(matrix[i][j] +" ");
+        //     }
+        //     Console.WriteLine();
+        // }
+        
+        //Return the last cell.
+        return matrix[word1.Length-1][word2.Length - 1];
+    }
+}
