@@ -1,0 +1,95 @@
+72. Edit Distance
+
+Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.
+
+You have the following 3 operations permitted on a word:
+
+Insert a character
+Delete a character
+Replace a character
+Example 1:
+
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation: 
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+Example 2:
+
+Input: word1 = "intention", word2 = "execution"
+Output: 5
+Explanation: 
+intention -> inention (remove 't')
+inention -> enention (replace 'i' with 'e')
+enention -> exention (replace 'n' with 'x')
+exention -> exection (replace 'n' with 'c')
+exection -> execution (insert 'u')
+
+
+Hint to solve: Dynamic programming.
+
+public class Solution 
+{
+    private void PrintMatrix(int[][] matrix, int row, int col)
+    {
+        for(int i = 0; i<row; ++i)
+        {
+            for(int j = 0; j<col; ++j)
+            {
+                Console.Write(matrix[i][j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+    
+    public int MinDistance(string word1, string word2) 
+    {
+        word1 = "-"+word1;
+        word2 = "-"+word2;
+        
+        int[][] matrix = new int[word1.Length][];
+        for(int i = 0; i<word1.Length; ++i)
+        {
+            matrix[i] = new int[word2.Length];
+            for(int j = 0; j<word2.Length; ++j)
+            {
+                //Except the first cell the first row or col is initialized to 1...N
+                if( (i == 0 && j == 0) == false && (i == 0 || j == 0))
+                {
+                    matrix[i][j] = i != 0 ? i : j;
+                }
+                else
+                {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        
+        //PrintMatrix(matrix, word1.Length, word2.Length);
+        
+        for(int i = 1; i<word1.Length; ++i)
+        {
+            for(int j = 1; j<word2.Length; ++j)
+            {
+                if(word1[i] == word2[j])
+                {
+                	//Directly set the value of the diagonal cell.
+                    matrix[i][j] = matrix[i-1][j-1];
+                }
+                else
+                {
+                	//Take the min value from left, top or diagonal element + 1
+                    int minValue = Math.Min(matrix[i-1][j], matrix[i][j-1]);
+                    minValue = Math.Min(matrix[i-1][j-1], minValue);
+                    matrix[i][j] = minValue+1;
+                }
+            }
+        }
+        
+        //PrintMatrix(matrix, word1.Length, word2.Length);
+        
+        return matrix[word1.Length-1][word2.Length-1];
+        
+    }
+}
