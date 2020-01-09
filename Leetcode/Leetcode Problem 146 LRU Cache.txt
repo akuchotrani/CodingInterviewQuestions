@@ -1,0 +1,180 @@
+146. LRU Cache
+Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
+
+get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
+The cache is initialized with a positive capacity.
+
+Follow up:
+Could you do both operations in O(1) time complexity?
+
+Example:
+
+LRUCache cache = new LRUCache( 2 /* capacity */ );
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // returns 1
+cache.put(3, 3);    // evicts key 2
+cache.get(2);       // returns -1 (not found)
+cache.put(4, 4);    // evicts key 1
+cache.get(1);       // returns -1 (not found)
+cache.get(3);       // returns 3
+cache.get(4);       // returns 4
+
+
+
+Hint to solve: Use doubly linked list and maintain the reference to each node in the hashmap.
+
+
+public class LRUCache 
+{
+    Dictionary<int, Node> NodeLocationMap;
+    int capacity;
+    
+    Node head;
+    Node tail;
+
+    public LRUCache(int capacity) 
+    {
+        this.capacity = capacity;
+        NodeLocationMap = new Dictionary<int, Node>();
+        
+        head = new Node();
+        tail = new Node();
+        head.next = tail;
+        tail.previous = head;
+    }
+    
+    public int Get(int key) 
+    {
+        //If the key is not present then just return -1
+        if(NodeLocationMap.ContainsKey(key) == false)
+            return -1;
+        
+        //If the key is present remove the node from the list and add it to the front.
+        //Return the value.
+        Node currentNode = NodeLocationMap[key];
+        RemoveNode(currentNode);
+        InsertInFront(currentNode);
+        
+        //DebugPrint();
+        
+        return currentNode.val;
+    }
+    
+    public void Put(int key, int value) 
+    {
+        //Step 1: Check if the key is already present in the current cache.
+        if(NodeLocationMap.ContainsKey(key))
+        {
+            //Remove the node from the linked list.
+            Node currentNode = NodeLocationMap[key];
+            RemoveNode(currentNode);
+            
+            //Update the value of current node.
+            currentNode.val = value;
+            
+            //Insert node in the front.
+            InsertInFront(currentNode);
+        }
+        else
+        {
+            //Create a new node
+            Node createdNode = new Node();
+            createdNode.key = key;
+            createdNode.val = value;
+            
+            //Check capacity.
+            if(capacity == 0)
+            {
+                RemoveLastNode();
+            }
+            
+            //Insert this node to the front.
+            InsertInFront(createdNode);
+        }
+        
+        //DebugPrint();
+    }
+    
+    public void RemoveLastNode()
+    {
+        Node lastNode = tail.previous;
+        RemoveNode(lastNode);
+    }
+    
+    public void RemoveNode(Node currentNode)
+    {
+        //Update references
+        Node nextNode = currentNode.next;
+        Node previousNode = currentNode.previous;
+        
+        nextNode.previous = previousNode;
+        previousNode.next = nextNode;
+        
+        //Remove the reference from the NodeLocationMap
+        NodeLocationMap.Remove(currentNode.key);
+                
+        //Increase the available capacity.
+        capacity += 1;
+    }
+    
+    public void InsertInFront(Node currentNode)
+    {
+        //Update References
+        Node frontNode = head.next;
+        head.next = currentNode;
+        currentNode.previous = head;
+        currentNode.next = frontNode;
+        frontNode.previous = currentNode;
+        
+        //Update the node location map
+        if(NodeLocationMap.ContainsKey(currentNode.key))
+        {
+            NodeLocationMap[currentNode.key] = currentNode;
+        }
+        else
+        {
+            NodeLocationMap.Add(currentNode.key,currentNode);
+        }
+        
+        //Decrease the capacity available.
+        this.capacity -= 1;
+    }
+    
+    
+    public void DebugPrint()
+    {
+        Node temp = head.next;
+        while(temp.next != null)
+        {
+            Console.Write("({0}:{1})->",temp.key,temp.val);
+            temp = temp.next;
+        }
+        Console.WriteLine();
+    }
+}
+
+public class Node
+{
+    public int key;
+    public int val;
+    
+    public Node next;
+    public Node previous;
+    
+    public Node()
+    {
+        next = null;
+        previous = null;
+    }
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.Get(key);
+ * obj.Put(key,value);
+ */
