@@ -1,0 +1,59 @@
+5. Longest Palindromic Substring
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+Example 1:
+
+Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+Example 2:
+
+Input: "cbbd"
+Output: "bb"
+
+
+Hint to solve: Use central diffusion(two pointer method expanding outwards for each char in the string.)
+Take care of the scenario when length of palindrome is even or odd.
+
+public class Solution 
+{
+    public string CentralDiffusion(string s, int startIndex, int endIndex)
+    {
+        int globalMax = 0;
+        string result = "";
+        while(startIndex >= 0 && endIndex != s.Length && s[startIndex] == s[endIndex])
+        {
+            int counter = endIndex - startIndex + 1;
+            if(counter > globalMax)
+            {
+                globalMax = counter;
+                result = s.Substring(startIndex, endIndex-startIndex + 1);
+            }
+            startIndex -= 1;
+            endIndex += 1;
+        }
+        
+        return result;
+    }
+    
+    public string LongestPalindrome(string s) 
+    {
+        if(s.Length <= 1)
+            return s;
+        
+        string result = "";
+        
+        for(int i = 0; i<s.Length; ++i)
+        {
+            string odd_palindrome = CentralDiffusion(s, i, i);
+            string even_palindrome = CentralDiffusion(s, i, i+1);
+            string temp_max = odd_palindrome.Length > even_palindrome.Length ? odd_palindrome : even_palindrome;
+            if(temp_max.Length > result.Length)
+            {
+                result = temp_max;
+            }
+        }
+
+        return result;
+    }
+}
