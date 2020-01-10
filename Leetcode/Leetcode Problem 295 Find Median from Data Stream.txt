@@ -1,0 +1,76 @@
+295. Find Median from Data Stream
+
+Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So the median is the mean of the two middle value.
+
+For example,
+[2,3,4], the median is 3
+
+[2,3], the median is (2 + 3) / 2 = 2.5
+
+Design a data structure that supports the following two operations:
+
+void addNum(int num) - Add a integer number from the data stream to the data structure.
+double findMedian() - Return the median of all elements so far.
+ 
+
+Example:
+
+addNum(1)
+addNum(2)
+findMedian() -> 1.5
+addNum(3) 
+findMedian() -> 2
+ 
+
+Follow up:
+
+If all integer numbers from the stream are between 0 and 100, how would you optimize it?
+If 99% of all integer numbers from the stream are between 0 and 100, how would you optimize it?
+
+
+Hint: Use two heap. Leftside -> maxHeap (insert negative number)
+RightSide -> minHeap 
+Try to maintain one extra element in the right side.
+
+
+from heapq import *
+
+class MedianFinder:
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.leftPortion = []
+        self.rightPortion = []
+        
+        
+    def addNum(self, num: int) -> None:
+        if(len(self.leftPortion) == len(self.rightPortion)):
+            heappush(self.leftPortion, -num)
+            largestNumber = -heappop(self.leftPortion)
+            heappush(self.rightPortion, largestNumber)
+        else:
+            heappush(self.rightPortion, num)
+            smallestNumber = -heappop(self.rightPortion)
+            heappush(self.leftPortion, smallestNumber)
+        #self.debugPrint()
+            
+    def rebalanceHeaps(self):
+        pass
+        
+        
+    def findMedian(self) -> float:
+        if(len(self.leftPortion) == len(self.rightPortion)):
+            return float(self.rightPortion[0] + (-self.leftPortion[0]))/2
+        else:
+            return self.rightPortion[0]
+    
+    def debugPrint(self):
+        print("leftPortion: ",self.leftPortion," rightPortion:",self.rightPortion)
+
+
+# Your MedianFinder object will be instantiated and called as such:
+# obj = MedianFinder()
+# obj.addNum(num)
+# param_2 = obj.findMedian()
