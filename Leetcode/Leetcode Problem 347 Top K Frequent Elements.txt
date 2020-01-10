@@ -1,0 +1,95 @@
+347. Top K Frequent Elements
+Given a non-empty array of integers, return the k most frequent elements.
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+Note:
+
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
+
+
+
+Hint to solve: Can be solved by either bucket sort or maxHeap
+
+
+
+from heapq import *
+
+class Solution:
+    
+    def topKFrequent_bucket(self, nums: List[int], k: int) -> List[int]:
+        frequencyMap = {}
+        buckets = [None] * (len(nums) + 1)
+                
+        result = []
+        
+        #Create a hashmap of frequency
+        for num in nums:
+            if(num in frequencyMap):
+                frequencyMap[num] += 1
+            else:
+                frequencyMap[num] = 1
+        
+        #Create buckets : map elements to the index based on their frequency
+        for key,value in frequencyMap.items():
+            if buckets[value] == None:
+                bucket = [key]
+                buckets[value] = bucket
+            else:
+                buckets[value].append(key)
+        
+        #Go through reverse order in the buckets and 
+        for bucket in reversed(buckets):
+            if bucket is None:
+                continue
+            if(len(result) >= k):
+                break
+            if len(result) < k:
+                result.extend(bucket)
+        
+        return result[:k]
+    
+    
+    #Second approach: Use heap to store priority(frequency).
+    def topKFrequent_heap(self, nums: List[int], k:int) -> List[int]:
+        frequencyMap = {}
+        bucketMap = {}
+        maxHeap = []
+
+        #Create a frequency map counter
+        for num in nums:
+            if num in frequencyMap:
+                frequencyMap[num] += 1
+            else:
+                frequencyMap[num] = 1
+        
+        #Create a bucket map. Where the items are mapped to frequency keys.
+        for key,val in frequencyMap.items():
+            if val in bucketMap:
+                bucketMap[val].append(key)
+            else:
+                bucket = [key]
+                bucketMap[val] = bucket
+                
+        #Make a max heap by inserting negative frequency key values and actual list of numbers mapped to it.
+        for key,val in bucketMap.items():
+            elementTuple = (-key,val)
+            heapq.heappush(maxHeap, elementTuple)
+                    
+        result = []
+        while len(result) < k:
+            result.extend(heapq.heappop(maxHeap)[1])
+        
+        return result
+        
+    
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        #return self.topKFrequent_bucket(nums, k)
+        return self.topKFrequent_heap(nums,k)
