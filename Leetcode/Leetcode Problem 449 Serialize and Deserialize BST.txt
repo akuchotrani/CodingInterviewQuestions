@@ -1,0 +1,65 @@
+449. Serialize and Deserialize BST
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+
+Design an algorithm to serialize and deserialize a binary search tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary search tree can be serialized to a string and this string can be deserialized to the original tree structure.
+
+The encoded string should be as compact as possible.
+
+Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
+
+
+Hint to solve: During serialization create recursive function and append values to a list.
+During deserialization load the string into a queue datastructure create a recursive function. Pass min value and max value. If the top queue value falls between this range create a node and call recurive function again with updated value of range.
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+from collections import deque
+
+class Codec:
+
+    def serialize(self, root: TreeNode) -> str:
+        """Encodes a tree to a single string.
+        """
+        valueList = []
+        def recurse_node(node: TreeNode):
+            if node != None:
+                valueList.append(node.val)
+                recurse_node(node.left)
+                recurse_node(node.right)
+        
+        recurse_node(root)
+        listToString = ' '.join(map(str,valueList))
+        return listToString
+        
+
+    def deserialize(self, data: str) -> TreeNode:
+        """Decodes your encoded data to tree.
+        """        
+        
+        if len(data) == 0:
+            return []
+        
+        stringToQueue = deque(int(val) for val in data.split(' '))
+        
+        def constructBST(minValue, maxValue):
+            if stringToQueue:
+                currentTopValue = stringToQueue[0]
+                if minValue < currentTopValue < maxValue:
+                    node = TreeNode(currentTopValue)
+                    stringToQueue.popleft()
+                    node.left = constructBST(minValue, currentTopValue)
+                    node.right = constructBST(currentTopValue, maxValue)
+                    return node
+        
+        return constructBST(-sys.maxsize, sys.maxsize)
+        
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.deserialize(codec.serialize(root))
