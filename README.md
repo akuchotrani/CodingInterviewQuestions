@@ -8,4 +8,6 @@ If you would like to contribute to the repo simply create a pull request.
 
 If you have any suggestons on topic/questions etc please mention in the issues we would try our best to solve and help you to push in right direction.
 
+For system design and other CS topics sign up for www.passionatestar.com
+
 Happy Coding :)
