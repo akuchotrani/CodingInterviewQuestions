@@ -1,0 +1,104 @@
+212. Word Search II
+Given a 2D board and a list of words from the dictionary, find all words in the board.
+
+Each word must be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.
+
+ 
+
+Example:
+
+Input: 
+board = [
+  ['o','a','a','n'],
+  ['e','t','a','e'],
+  ['i','h','k','r'],
+  ['i','f','l','v']
+]
+words = ["oath","pea","eat","rain"]
+
+Output: ["eat","oath"]
+
+
+Hint to solve: Load all the words into a trie. Do a DFS on each cell.
+
+
+class TrieNode:
+    def __init__(self):
+        self.dictionary = {}
+        self.isEndOfWord = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word: str) -> None:
+        
+        currentNode = self.root
+        for alphabet in word:
+            if alphabet in currentNode.dictionary:
+                currentNode = currentNode.dictionary[alphabet]
+            else:
+                createdNode = TrieNode()
+                currentNode.dictionary[alphabet] = createdNode
+                currentNode = createdNode
+        
+        currentNode.isEndOfWord = True
+        
+    def search_word(self, word: str) -> bool:
+        currentNode = self.root
+        for alphabet in word:
+            if alphabet in currentNode.dictionary:
+                currentNode = currentNode.dictionary[alphabet]
+            else:
+                return False
+        
+        return currentNode.isEndOfWord
+    
+    def search_prefix(self, word: str) -> bool:
+        
+        currentNode = self.root
+        for alphabet in word:
+            if alphabet in currentNode.dictionary:
+                currentNode = currentNode.dictionary[alphabet]
+            else:
+                return False
+        
+        return True
+        
+
+class Solution:
+    def DFS(self, board: List[List[str]], node : TrieNode, currentWord: str, row: int, col: int) -> None:
+        
+        if(not node):
+            return
+        
+        if(node.isEndOfWord == True):
+            self.result.add(currentWord)
+            node.isEndOfWord = False
+        
+        if(row < 0 or row >= len(board) or col < 0 or col >= len(board[0])):
+            return False
+        
+        temp = board[row][col]
+        board[row][col] = '-'
+        node = node.dictionary.get(temp)
+        
+        result = (self.DFS(board, node, currentWord + temp, row - 1, col) or self.DFS(board, node, currentWord + temp, row + 1, col) or
+                  self.DFS(board, node, currentWord + temp, row, col - 1) or self.DFS(board, node, currentWord + temp, row, col + 1))
+        
+        board[row][col] = temp
+                
+    
+    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
+        
+        self.result = set()
+        self.trie = Trie()
+        
+        for word in words:
+            self.trie.insert(word)
+            
+        for row in range(len(board)):
+            for col in range(len(board[0])):
+                self.DFS(board, self.trie.root, '', row, col)
+                    
+        return self.result
