@@ -1,0 +1,96 @@
+
+148. Sort List
+
+Sort a linked list in O(n log n) time using constant space complexity.
+
+Example 1:
+
+Input: 4->2->1->3
+Output: 1->2->3->4
+Example 2:
+
+Input: -1->5->3->4->0
+Output: -1->0->3->4->5
+
+
+
+Hint to solve: Use merge sort. 
+Partition the list into two halves
+	-Use three pointers previous,slow and fast.
+	-move fast pointer twice the speed.
+	-set the previous to null to break the list into two halves.
+
+Merge two list
+	-Move two poiters and compare the elements 
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    
+    
+    def mergeSortRecursive(self, head:ListNode) -> ListNode:
+        
+        #If there's only one element present in the list
+        if(head == None or head.next == None):
+            return head
+        
+        #Step 1 : Partition the list into two halves
+        #Move two pointers one twice the speed of the other
+        previous = None
+        slow = head
+        fast = head
+        
+        while(fast != None and fast.next != None):
+            previous = slow
+            slow = slow.next
+            fast = fast.next.next
+        #breaking the list from head to slow and slow to fast
+        if previous:
+            previous.next = None
+        
+        firstHalf = self.mergeSortRecursive(head)
+        secondHalf = self.mergeSortRecursive(slow)
+        
+        
+        #Step 2: Merge the two parts
+        sortedList = self.mergeTwoSortedList(firstHalf, secondHalf)
+        
+        return sortedList
+    
+    
+    def mergeTwoSortedList(self, firstList: ListNode, secondList: ListNode) -> ListNode:
+        sortedListHead = ListNode(0)
+        temp = sortedListHead
+        
+        while firstList != None and secondList != None:
+            if firstList.val <= secondList.val:
+                temp.next = firstList
+                firstList = firstList.next
+            elif secondList.val < firstList.val:
+                temp.next = secondList
+                secondList = secondList.next
+            
+            temp = temp.next
+        
+        if firstList != None:
+            temp.next = firstList
+        
+        if secondList != None:
+            temp.next = secondList
+        
+        #since we are instantiating a new list node with 0 in the beginning
+        return sortedListHead.next
+            
+        
+        
+    
+    def sortList(self, head: ListNode) -> ListNode:
+        
+        result = self.mergeSortRecursive(head)
+        
+        return result
