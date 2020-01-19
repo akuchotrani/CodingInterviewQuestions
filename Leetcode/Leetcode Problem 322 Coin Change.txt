@@ -1,0 +1,36 @@
+322. Coin Change
+You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+Example 1:
+
+Input: coins = [1, 2, 5], amount = 11
+Output: 3 
+Explanation: 11 = 5 + 5 + 1
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+Note:
+You may assume that you have an infinite number of each kind of coin.
+
+
+Hint to solve: Use bottom up dynamic programming
+
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        
+        #make a dpArray from 0 to amount+1 and initialize with infinity or large amount or amount+1
+        dpArray = [amount+1 for _ in range(0, amount+1)]
+        
+        #For making a change of 0 we need 0 coins
+        dpArray[0] = 0
+        
+        #Calculate the minimum coin required for making change for each amount
+        for amountIndex in range(len(dpArray)):
+            for coin in coins:
+                #Only for valid coin amount. If the amount is less than coin value we cannot make change
+                if(amountIndex >= coin):
+                    dpArray[amountIndex] = min(dpArray[amountIndex], 1 + dpArray[amountIndex - coin])
+        
+        #Return the last index value if the value is less than what was initially set when initializing the array
+        return dpArray[amount] if dpArray[amount] < amount+1 else -1
