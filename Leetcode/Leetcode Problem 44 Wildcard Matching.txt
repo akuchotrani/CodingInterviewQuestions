@@ -1,0 +1,99 @@
+44. Wildcard Matching
+Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*'.
+
+'?' Matches any single character.
+'*' Matches any sequence of characters (including the empty sequence).
+The matching should cover the entire input string (not partial).
+
+Note:
+
+s could be empty and contains only lowercase letters a-z.
+p could be empty and contains only lowercase letters a-z, and characters like ? or *.
+Example 1:
+
+Input:
+s = "aa"
+p = "a"
+Output: false
+Explanation: "a" does not match the entire string "aa".
+Example 2:
+
+Input:
+s = "aa"
+p = "*"
+Output: true
+Explanation: '*' matches any sequence.
+Example 3:
+
+Input:
+s = "cb"
+p = "?a"
+Output: false
+Explanation: '?' matches 'c', but the second letter is 'a', which does not match 'b'.
+Example 4:
+
+Input:
+s = "adceb"
+p = "*a*b"
+Output: true
+Explanation: The first '*' matches the empty sequence, while the second '*' matches the substring "dce".
+Example 5:
+
+Input:
+s = "acdcb"
+p = "a*c?b"
+Output: false
+
+
+Hint to solve: Use dynamic programming. Make rules for ?, * and character in the pattern.
+
+
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        
+        #If pattern is empty string and the given data is empty then return True
+        if(len(p) == 0 and len(s) == 0):
+            return True
+        #If the pattern is empty but the given string is not empty return False
+        if(len(p) == 0 and len(s) != 0):
+            return False
+        
+        #Compress the pattern that contains more than 1 consequitive stars into single star. Which means the same thing
+        compactPattern = ""
+        isFirstStar = True
+        for i in range(len(p)):
+            if p[i] == '*' and isFirstStar:
+                compactPattern += p[i]
+                isFirstStar = False
+            elif p[i] != '*':
+                compactPattern += p[i]
+                isFirstStar = True
+        
+        p = compactPattern
+        
+        #Initialize a 2d matrix of cols = len of pattern+1 and rows = len of string + 1
+        #0th index is for empty string and empty pattern
+        matrix = [[False for _ in range(len(p) + 1)] for _ in range(len(s) + 1)]
+        
+        #This will be always true because empty pattern always matches with empty string
+        matrix[0][0] = True
+        
+        #If the first char of pattern is star then for empty string this will be True
+        if p[0] == '*':
+            matrix[0][1] = True
+        
+        #If the current pattern character is ? then take element from Diagonal
+        #If the current pattern character is alphabet check if it's equal to string character then take value from Diagonal
+        #If the current pattern character is star then take value of top or left cell
+        #Else set if to false
+        for row in range(1, len(matrix)):
+            for col in range(1, len(matrix[0])):
+                if p[col-1] == '?' or p[col-1] == s[row-1]:
+                    matrix[row][col] = matrix[row-1][col-1]
+                elif p[col-1] == '*':
+                    matrix[row][col] = matrix[row-1][col] or matrix[row][col-1]
+                else:
+                    matrix[row][col] = False
+        
+        
+        return matrix[len(s)][len(p)]
