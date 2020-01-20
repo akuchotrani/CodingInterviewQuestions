@@ -1,0 +1,71 @@
+41. First Missing Positive
+Given an unsorted integer array, find the smallest missing positive integer.
+
+Example 1:
+
+Input: [1,2,0]
+Output: 3
+Example 2:
+
+Input: [3,4,-1,1]
+Output: 2
+Example 3:
+
+Input: [7,8,9,11,12]
+Output: 1
+Note:
+
+Your algorithm should run in O(n) time and uses constant extra space.
+
+
+
+Hint to solve: Use the same array and override the index of element value to negative to mark as present.
+
+
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        
+        #Check if 1 is present in the nums. We are doing this because we will use 1 as flag for preprocessing the data
+        #If num is negative, 0 or greater then len(nums) then set it to 1
+        isOnePresent = False
+        for i in range(len(nums)):
+            if nums[i] == 1:
+                isOnePresent = True
+                break
+                
+        if isOnePresent == False:
+            return 1
+        
+        #Preprocessing the nums. If the value of num is negative, 0 or greater then len of nums just set it to 1
+        for i in range(len(nums)):
+            if nums[i] <= 0 or nums[i] > len(nums):
+                nums[i] = 1
+        
+        #print(F"Before invalidating: {nums}")
+        for i in range(len(nums)):
+            value = abs(nums[i])
+            
+            #Invalidate the index by setting it to negative
+            #Edge case when value is len(nums) set the value of 0th index to negative
+            if value == len(nums):
+                nums[0] = -1*abs(nums[0])
+            else:
+                nums[value] = -1*abs(nums[value])
+        
+        #print(F"After invalidating: {nums}")
+        
+        #Any index that is positive has not been invalidated. This is our answer
+        #Remember to check this first before the next check for 0th index. Since the number from middle and last index could be missing.
+        #But we need to prioritize the middle number before the 0th index(last index)
+        for i in range(1, len(nums)):
+            if nums[i] > 0:
+                return i
+            
+        #Check if the 0th index is positive. Then len(nums) is not present
+        if nums[0] > 0:
+            return len(nums)
+        
+
+        
+        #If every index is presnet eg [1,2,3] we need to return 4
+        return len(nums) + 1
