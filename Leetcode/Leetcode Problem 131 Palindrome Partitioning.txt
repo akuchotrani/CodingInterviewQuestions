@@ -1,0 +1,53 @@
+131. Palindrome Partitioning
+Given a string s, partition s such that every substring of the partition is a palindrome.
+
+Return all possible palindrome partitioning of s.
+
+Example:
+
+Input: "aab"
+Output:
+[
+  ["aa","b"],
+  ["a","a","b"]
+]
+
+
+Hint to solve: Use recursion and backtracking. Only follow the path if the current substring is a valid palindrome
+
+class Solution:
+    
+    def isValidPalindrome(self, substring):
+        if len(substring) == 0:
+            return False
+        left = 0
+        right = len(substring) - 1
+        while(left <= right):
+            if substring[left] != substring[right]:
+                return False
+            left += 1
+            right -= 1
+        
+        return True
+    
+    def partition_recurse(self, originalString, currentIndex, currentPartitionStrings):
+        
+        #print(F"currentIndex:{currentIndex} currentPartitionStrings:{currentPartitionStrings}")
+        if currentIndex == len(originalString):
+            self.validPartition.append(currentPartitionStrings.copy())
+            
+        for index in range(currentIndex, len(originalString)):
+            substring = originalString[currentIndex: index+1]
+            
+            if(self.isValidPalindrome(substring)):
+                currentPartitionStrings.append(substring)
+                self.partition_recurse(originalString, index + 1, currentPartitionStrings)
+                #print(F"Undo the last step: {currentPartitionStrings[-1]}")
+                currentPartitionStrings.pop()
+    
+    
+    def partition(self, s: str) -> List[List[str]]:
+        self.validPartition = []
+        self.partition_recurse(s, 0, [])
+        
+        return self.validPartition
