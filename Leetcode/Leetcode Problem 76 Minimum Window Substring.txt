@@ -1,0 +1,76 @@
+76. Minimum Window Substring
+Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+
+Example:
+
+Input: S = "ADOBECODEBANC", T = "ABC"
+Output: "BANC"
+Note:
+
+If there is no such window in S that covers all characters in T, return the empty string "".
+If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
+
+
+Hint to solve: Use two pointer approach. If the substring does not contain all the char in the pattern then increament rightPtr
+If the substring contains all the char in the pattern then record the result if the size of the window is less.
+	- Decreament or delete the key at the left ptr
+	- Increament the left ptr
+
+class Solution:
+    
+    def isValidSubstring(self,originalDict, wordDict):
+        isValid = True
+        
+        for key in originalDict:
+            if key not in wordDict:
+                isValid = False
+                break
+            
+            if originalDict[key] > wordDict[key]:
+                isValid = False
+                break
+        
+        return isValid
+    
+    def minWindow(self, s: str, t: str) -> str:
+        
+        leftPtr = 0
+        rightPtr = 0
+        wordDict = {}
+        originalDict = {}
+        
+        for alpha in t:
+            if alpha in originalDict:
+                originalDict[alpha] += 1
+            else:
+                originalDict[alpha] = 1
+                
+        wordDict[s[0]] = 1
+        
+        minWindowSize = sys.maxsize
+        result = ""
+        
+        while rightPtr < len(s):
+            #print(F'leftPtr: {leftPtr} rightPtr: {rightPtr} result:{result} minWindowSize: {minWindowSize}')
+            if self.isValidSubstring(originalDict, wordDict) == False:
+                rightPtr += 1
+                if rightPtr == len(s):
+                    break
+                if s[rightPtr] in wordDict:
+                    wordDict[s[rightPtr]] += 1
+                else:
+                    wordDict[s[rightPtr]] = 1
+            else:
+                if rightPtr - leftPtr < minWindowSize:
+                    minWindowSize = rightPtr - leftPtr + 1
+                    result = s[leftPtr:leftPtr+minWindowSize]
+                    #print(result)
+                
+                if s[leftPtr] in wordDict:
+                    if wordDict[s[leftPtr]] == 1:
+                        del wordDict[s[leftPtr]]
+                    else:
+                        wordDict[s[leftPtr]] -= 1
+                leftPtr += 1
+                
+        return result

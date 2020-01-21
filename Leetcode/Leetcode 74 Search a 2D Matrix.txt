@@ -1,0 +1,110 @@
+74. Search a 2D Matrix
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+Example 1:
+
+Input:
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+target = 3
+Output: true
+Example 2:
+
+Input:
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+target = 13
+Output: false
+
+
+Hint to solve: 2 methods
+1st method: Use wrapping by division and modulo
+2nd method: Use two binary search on row and cols
+
+class Solution:
+    
+    #treat 2d matrix as a sorted list and generate mapping
+    # row = mid/total_cols
+    # col = mid%total_cols
+    def method_1(self, matrix:List[List[int]], target:int) -> bool:
+        if len(matrix) == 0 or len(matrix[0]) == 0:
+            return False
+        
+        total_rows = len(matrix)
+        total_cols = len(matrix[0])
+        
+        start = 0
+        end = (total_rows * total_cols) - 1
+        
+        while(start <= end):
+            mid = (int)((end+start)/2)
+            mid_value = matrix[(int)(mid/total_cols)][mid%total_cols]
+            #print(F"start:{start} end:{end} mid:{mid} midVal:{mid_value}")
+            if mid_value == target:
+                return True
+            
+            if mid_value < target:
+                start = mid + 1
+            elif mid_value > target:
+                end = mid - 1
+                
+        return False
+    
+    #Perform 2 binary search
+    #First binary search on the row
+    #Second binary search on the col
+    def method_2(self, matrix, target) -> bool:
+        
+        if len(matrix) == 0 or len(matrix[0]) == 0:
+            return False
+        total_rows = len(matrix)
+        total_cols = len(matrix[0])
+        
+        #Binary search on row. To decide which row might contain the number
+        start = 0
+        end = total_rows - 1
+        rowIndex = 0
+        while(start <= end):
+            mid = (int)((start+end)/2)
+            rowIndex = mid
+            #print(F"start:{start} end:{end} mid:{mid} midValue:{matrix[mid][0]}")
+            if(matrix[mid][0] == target):
+                return True
+            
+            if(matrix[mid][0] < target and matrix[mid][total_cols-1] >= target):
+                break
+            
+            if matrix[mid][0] < target:
+                start = mid + 1
+            elif matrix[mid][0] > target:
+                end = mid - 1
+        
+        
+        #Binary search on column
+        start = 0
+        end = total_cols - 1
+        
+        while(start <= end):
+            mid = (int)((start+end)/2)
+            #print(F"start:{start} end:{end} mid:{mid} midValue:{matrix[rowIndex][mid]}")
+            if(matrix[rowIndex][mid] == target):
+                return True
+            
+            if matrix[rowIndex][mid] < target:
+                start = mid + 1
+            elif matrix[rowIndex][mid] > target:
+                end = mid - 1
+            
+        return False
+    
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        # return self.method_1(matrix, target)
+        return self.method_2(matrix, target)
