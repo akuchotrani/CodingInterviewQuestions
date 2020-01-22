@@ -1,0 +1,82 @@
+33. Search in Rotated Sorted Array
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+Example 1:
+
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+
+
+
+Hint to solve: Use binary search to find pivot. Use binary search to find the element in the first half or second.
+
+class Solution:
+    
+    def method_1(self, nums, target) -> int:
+        
+        if len(nums) == 0:
+            return -1
+        
+        if len(nums) == 1:
+            if target == nums[0]:
+                return 0
+            else:
+                return -1
+        
+        #Step 1 is to find the pivot element by using binary search.
+        
+        start = 0
+        end = len(nums) - 1
+        pivotElementIndex = mid = 0
+        while(start <= end):
+            mid = (int)((start + end)/2)
+            
+            #Note: If mid reaches the end the array was not rotated
+            if mid == len(nums) - 1 or nums[mid] > nums[mid+1]:
+                pivotElementIndex = mid+1
+                break
+            
+            #The pivot should be in the left part
+            if nums[start] > nums[mid]:
+                end = mid - 1
+            #The pivot should be in the right part
+            else:
+                start = mid + 1
+        
+        print("The pivot element: ", pivotElementIndex)
+        
+        #Step 2: Find the target in the first part or second part
+        if target >= nums[0] and target <= nums[pivotElementIndex - 1]:
+            start = 0
+            end = pivotElementIndex - 1
+        else:
+            start = pivotElementIndex
+            end = len(nums) - 1
+        
+        
+        while(start <= end):
+            mid = (int)((start + end)/2)
+            if target == nums[mid]:
+                return mid
+            
+            if target < nums[mid]:
+                end = mid - 1
+            else:
+                start = mid + 1
+            
+        return -1
+        
+    def search(self, nums: List[int], target: int) -> int:
+        return self.method_1(nums, target)
