@@ -1,0 +1,131 @@
+36. Valid Sudoku
+Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+
+Each row must contain the digits 1-9 without repetition.
+Each column must contain the digits 1-9 without repetition.
+Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+
+A partially filled sudoku which is valid.
+
+The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+
+Example 1:
+
+Input:
+[
+  ["5","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+Output: true
+Example 2:
+
+Input:
+[
+  ["8","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+Output: false
+Explanation: Same as Example 1, except with the 5 in the top left corner being 
+    modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+Note:
+
+A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+Only the filled cells need to be validated according to the mentioned rules.
+The given board contain only digits 1-9 and the character '.'.
+The given board size is always 9x9.
+
+
+def isValidBoard(self, row, col, board):
+currentValueDecision = board[row][col]
+
+#Check the row for validity. Go through cols and check for repeated value
+for i in range(len(board[0])):
+    if i != col and board[row][i] == currentValueDecision:
+        print(F"Cannot place {currentValueDecision} at position {row},{col} Error from row validity")
+        return False
+
+#Check the col for validity. Go through the rows and check for repeated value
+for i in range(len(board)):
+    if i!= row and board[i][col] == currentValueDecision:
+        print(F"Cannot place {currentValueDecision} at position {row},{col} Error from col validity")
+        return False
+
+#Check the sub grid
+subGridRegionSize = 3
+
+#We do this to trim out the decimal from the row and col index to calculate the top corners
+verticalRowIndex = (int)(row/subGridRegionSize)
+horizontalColIndex = (int)(col/subGridRegionSize)
+
+#Calculate the top corners
+topRowIndex = subGridRegionSize*verticalRowIndex
+topColIndex = subGridRegionSize*horizontalColIndex
+
+#Loop through the sub grid and check for repetitions
+for i in range(subGridRegionSize):
+    for j in range(subGridRegionSize):
+        if board[topRowIndex + i][topColIndex + j] == currentValueDecision and ((topRowIndex+i) != row and (topColIndex+j) != col):
+            print(F"Cannot place {currentValueDecision} at position {row},{col} Error from grid validity")
+            return False
+
+return True
+
+def isValidSudoku(self, board: List[List[str]]) -> bool:
+return self.isGivenSudokuValid(board)
+
+
+
+
+
+
+
+
+
+
+
+#Backtracking sudoku solver. There's bug in the code it fails on few test cases need to debug
+
+def solveSudoku(self, row, col, board) -> bool:
+        
+#         #Goal condition for solving individual row
+#         if col == len(board[0]):
+#             col = 0
+#             row += 1
+#             print(F"proceeding to the next row: {row}")
+        
+#         #End goal condition
+#         if row == len(board):
+#             print(F"Solved the board")
+#             return True
+        
+#         #Default value already present so no need to solve for that cell
+#         if board[row][col] != '.':
+#             return self.solveSudoku(row, col+1, board)
+        
+#         #Go through the choice/decision space
+#         for value in range(1,10):
+#             board[row][col] = (str)(value)
+#             print(F"Trying to place value: {value} at position {row},{col}")
+#             if self.isValidBoard(row, col, board):
+#                 print("This was valid")
+#                 #Solve the next cell through a recursive call
+#                 if(self.solveSudoku(row, col+1, board)):
+#                     return True
+#             #If the current decision did not work out then revert and try for next value
+#             board[row][col] = "."
+        
+#         return False
