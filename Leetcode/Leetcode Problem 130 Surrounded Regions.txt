@@ -1,0 +1,57 @@
+130. Surrounded Regions
+Given a 2D board containing 'X' and 'O' (the letter O), capture all regions surrounded by 'X'.
+
+A region is captured by flipping all 'O's into 'X's in that surrounded region.
+
+Example:
+
+X X X X
+X O O X
+X X O X
+X O X X
+After running your function, the board should be:
+
+X X X X
+X X X X
+X X X X
+X O X X
+Explanation:
+
+Surrounded regions shouldn’t be on the border, which means that any 'O' on the border of the board are not flipped to 'X'. Any 'O' that is not on the border and it is not connected to an 'O' on the border will be flipped to 'X'. Two cells are connected if they are adjacent cells connected horizontally or vertically.
+
+
+class Solution:
+    
+    def dfs(self, row, col, board):
+        if row < 0 or row >= len(board) or col < 0 or col >= len(board[0]) or board[row][col] == 'X' or board[row][col] == -1:
+            return board
+        
+        board[row][col] = -1
+        self.dfs(row + 1, col, board)
+        self.dfs(row - 1, col, board)
+        self.dfs(row, col - 1, board)
+        self.dfs(row, col + 1, board)
+        
+        return board
+    
+    
+    def solve(self, board: List[List[str]]) -> None:
+        
+        if len(board) == 0 or len(board[0]) == 0:
+            return board
+        
+        for row in range(len(board)):
+            for col in range(len(board[0])):
+                if row == 0 or row == len(board) - 1 or col == 0 or col == len(board[0]) - 1:
+                    if board[row][col] == 'O':
+                        board = self.dfs(row, col, board)
+        
+        #print(board)
+        for row in range(len(board)):
+            for col in range(len(board[0])):
+                if board[row][col] == 'O':
+                    board[row][col] = 'X'
+                elif board[row][col] == -1:
+                    board[row][col] = 'O'
+        
+        return board
