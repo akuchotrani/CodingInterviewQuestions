@@ -1,0 +1,55 @@
+239. Sliding Window Maximum
+Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.
+
+Example:
+
+Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
+Output: [3,3,5,5,6,7] 
+Explanation: 
+
+Window position                Max
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+Note:
+You may assume k is always valid, 1 ≤ k ≤ input array's size for non-empty array.
+
+Follow up:
+Could you solve it in linear time?
+
+
+Hint to solve: Use deque and keep it sorted all the time
+
+from collections import deque
+
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        
+        result = []
+        myQueue = deque()
+        
+        for index,num in enumerate(nums):
+            
+            #Remove all the extinct elements from the front of the queue
+            while len(myQueue) != 0 and myQueue[0][1] < index - k + 1:
+                myQueue.popleft()
+            
+            #Keep appending to the deque elements to keep in sorted order at all times
+            if len(myQueue) == 0 or myQueue[len(myQueue) - 1][0] >= num:
+                myQueue.append((num,index))
+            else:
+                #If the current element is bigger than the last element keep on popping the elements
+                while len(myQueue) != 0 and myQueue[len(myQueue) - 1][0] < num:
+                    myQueue.pop()
+                myQueue.append((num,index))
+            
+            #Add the elements to the result once the index is bigger or equal to size of window.
+            #Mainly useful for the initial elements when index is too low
+            if index-k + 1>= 0:
+                result.append(myQueue[0][0])
+        
+        return result

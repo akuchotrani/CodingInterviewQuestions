@@ -1,0 +1,47 @@
+378. Kth Smallest Element in a Sorted Matrix
+Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.
+
+Note that it is the kth smallest element in the sorted order, not the kth distinct element.
+
+Example:
+
+matrix = [
+   [ 1,  5,  9],
+   [10, 11, 13],
+   [12, 13, 15]
+],
+k = 8,
+
+return 13.
+Note:
+You may assume k is always valid, 1 ≤ k ≤ n2.
+
+
+Hint to solve: Use a min heap.
+Push the elements from the first row to the heap.
+Keep on popping from the heap until K iterations.
+When popping push the matrix element from the next row and same col
+
+import heapq
+
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        
+        if len(matrix) == 0 or len(matrix[0]) == 0:
+            return -1
+        myPQ = []
+        
+        #Push the first row inside the heap
+        for col in range(0, len(matrix[0])):
+            heapq.heappush(myPQ, (matrix[0][col], 0, col))
+            
+        
+        result = -1
+        for _ in range(k):
+            value = heapq.heappop(myPQ)
+            result = value[0]
+            #Push the value from the next row and same col
+            if value[1] < len(matrix)-1:
+                heapq.heappush(myPQ, (matrix[value[1] + 1][value[2]], value[1] + 1, value[2]))
+        
+        return result
