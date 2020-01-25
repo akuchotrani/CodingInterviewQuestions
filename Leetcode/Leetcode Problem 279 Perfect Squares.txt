@@ -1,0 +1,31 @@
+279. Perfect Squares
+Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
+
+Example 1:
+
+Input: n = 12
+Output: 3 
+Explanation: 12 = 4 + 4 + 4.
+Example 2:
+
+Input: n = 13
+Output: 2
+Explanation: 13 = 4 + 9.
+
+
+Hint to solve: 
+
+class Solution:
+    def numSquares(self, n: int) -> int:
+        
+        dpArray = [i for i in range(n)]
+        #print(dpArray)
+        
+        for i in range(n):
+            for j in range(i):
+                if j*j > i:
+                    break
+                #Here there's +1 since if we consider number of square from the previous cell we haven't considered the current cell
+                dpArray[i] = min(dpArray[i], dpArray[i - j*j] + 1)
+                        
+        return dpArray[n-1]
