@@ -1,0 +1,65 @@
+105. Construct Binary Tree from Preorder and Inorder Traversal
+Given preorder and inorder traversal of a tree, construct the binary tree.
+
+Note:
+You may assume that duplicates do not exist in the tree.
+
+For example, given
+
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+Return the following binary tree:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+
+Hint to solve: Use recrusive calls.
+Create a root node for current index from pre order traversal.
+Find the index of the root in the inorder array.(rootLocation)
+Make two recrusive calls for calculating the left and right nodes of the tree
+left recursive call = start to rootLocation - 1										nextLeftNode = currentIndex + 1 since it's a preorder traversal. Left will come directly after root.
+right recursive call = rootLocation + 1 to end 										nextRightNode = currentIndex + (length of the nodes on the left side in the in order traversal) + 1
+
+class Solution:
+    
+    def constructTreeRecursive(self, startList, endList, currentIndex):
+        
+        if(startList < 0 or startList>= len(self.preorder) 
+           or 
+           endList < 0 or endList >= len(self.preorder) 
+           or 
+           currentIndex < 0 or currentIndex >= len(self.preorder)
+           or 
+           startList > endList):
+            return None
+        #print(F"startList:{startList} endList:{endList} currentIndex:{currentIndex} currentElement:{self.preorder[currentIndex]}")
+
+        
+        node = TreeNode(self.preorder[currentIndex])
+        rootLocationIndex = 0
+        for index,num in enumerate(self.inorder):
+            if num == self.preorder[currentIndex]:
+                rootLocationIndex = index
+                break
+                
+        node.left = self.constructTreeRecursive(startList, rootLocationIndex - 1, currentIndex+1)
+        node.right = self.constructTreeRecursive(rootLocationIndex + 1, endList, currentIndex + (rootLocationIndex-startList) + 1)
+        
+        return node
+        
+    
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        self.preorder = preorder
+        self.inorder = inorder
+        return self.constructTreeRecursive(0, len(preorder)-1, 0)
