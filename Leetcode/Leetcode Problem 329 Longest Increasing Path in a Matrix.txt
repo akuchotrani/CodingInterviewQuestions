@@ -1,0 +1,74 @@
+329. Longest Increasing Path in a Matrix
+
+Given an integer matrix, find the length of the longest increasing path.
+
+From each cell, you can either move to four directions: left, right, up or down. You may NOT move diagonally or move outside of the boundary (i.e. wrap-around is not allowed).
+
+Example 1:
+
+Input: nums = 
+[
+  [9,9,4],
+  [6,6,8],
+  [2,1,1]
+] 
+Output: 4 
+Explanation: The longest increasing path is [1, 2, 6, 9].
+Example 2:
+
+Input: nums = 
+[
+  [3,4,5],
+  [3,2,6],
+  [2,2,1]
+] 
+Output: 4 
+Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
+
+
+Hint to solve: Use dfs. record the max path length of top, bottom, left and right.
+Check if the node is already present in the dictionary(The value for it is already calculated)
+Mark the visited node as V
+Reset the original value when the recursion completes.
+Record the value in dictionary
+
+class Solution:
+    
+    def calculateMaxPathDFS(self, row, col, matrix, parentCellValue)->int:
+        
+        if (row < 0 or row >= len(matrix) or col < 0 or col >= len(matrix[0]) 
+            or matrix[row][col] == "V" or matrix[row][col] >= parentCellValue):
+            return 0
+        
+        key = str(row)+','+str(col)
+        if key in self.maxPathDict:
+            return self.maxPathDict[key] + 1
+        
+        originalParentValue = matrix[row][col]
+        #Marking the current cell as V to indicate that it's visited
+        matrix[row][col] = "V"
+        topPath = self.calculateMaxPathDFS(row-1, col, matrix, originalParentValue)
+        downPath = self.calculateMaxPathDFS(row + 1, col, matrix, originalParentValue)
+        leftPath = self.calculateMaxPathDFS(row, col-1, matrix, originalParentValue)
+        rightPath = self.calculateMaxPathDFS(row, col+1, matrix, originalParentValue)
+        #Resetting it to previous original value
+        matrix[row][col] = originalParentValue
+        
+        maximum = max(topPath, downPath, leftPath, rightPath)
+        
+        #print(F"row:{row} col:{col} value:{originalParentValue} maximumPath:{maximum}")
+        self.maxPathDict[key] = maximum
+
+        return maximum + 1
+    
+    
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        self.maxPathDict = {}
+        maxPathLength = 0
+        
+        for row in range(len(matrix)):
+            for col in range(len(matrix[0])):
+                currentPathLength = self.calculateMaxPathDFS(row, col, matrix, sys.maxsize)
+                maxPathLength = max(maxPathLength, currentPathLength)
+        
+        return maxPathLength
