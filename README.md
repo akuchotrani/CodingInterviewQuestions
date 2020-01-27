@@ -32,6 +32,9 @@ Dynamic Programming Problems | Difficulty |  solution link
 
 Linked List Problems | Difficulty |  solution link
 -----------------------|------------|----------------
+
+[Leetcode Problem 2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt) [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
+[Leetcode Problem 19 Remove Nth node from end of the list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20problem%2019%20Remove%20Nth%20node%20from%20end%20of%20the%20list.txt)
 [Leetcode Problem 328 Odd Even Linked List](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 
 
