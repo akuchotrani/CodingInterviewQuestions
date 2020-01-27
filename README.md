@@ -15,7 +15,6 @@ Happy Coding :)
 Heap Problems | Difficulty |  solution link
 ------------- |------------|----------------
 [Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
-
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
 
 
