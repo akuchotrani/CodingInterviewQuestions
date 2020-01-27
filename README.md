@@ -12,7 +12,6 @@ For system design and other CS topics sign up for www.passionatestar.com
 
 Happy Coding :)
 
-Heap Problems | solution link
------------- | -------------
-[Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
-Content in the first column | Content in the second column
+Heap Problems | Difficulty |  solution link
+------------- |------------|----------------
+[Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
