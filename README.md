@@ -44,5 +44,7 @@ Backtracking Problems | Difficulty |  solution link
 
 BFS DFS Problems | Difficulty |  solution link
 -----------------|------------|----------------
+[Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
+[Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 [Leetcode Problem 994 Rotting Oranges](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 
