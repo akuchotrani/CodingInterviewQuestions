@@ -17,12 +17,13 @@ Heap Problems | Difficulty |  solution link
 [Leetcode Problem 19 Merge Two Sorted Lists](https://leetcode.com/problems/add-two-numbers/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 [Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
-[Leetcode Problem 703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
+[Leetcode Problem 703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20703%20Kth%20Largest%20Element%20in%20a%20Stream.txt)
 
 
 Binary Search Problems | Difficulty |  solution link
 -----------------------|------------|----------------
 [Leetcode Problem 4 Median of two sorted arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
+[Leetcode Problem 162 Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20162%20Find%20Peak%20Element.txt)
 
 
 Dynamic Programming Problems | Difficulty |  solution link
@@ -46,5 +47,13 @@ BFS DFS Problems | Difficulty |  solution link
 -----------------|------------|----------------
 [Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
 [Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
+[Leetcode Problem 289 Game of life](https://leetcode.com/problems/game-of-life/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
 [Leetcode Problem 994 Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20994%20Rotting%20Oranges.txt)
 
+
+Two Pointer Problems | Difficulty |  solution link
+-----------------|------------|----------------
+[Leetcode Problem 3 Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%203%20Longest%20Substring%20Without%20Repeating%20Characters.txt)
+[Leetcode Problem 5 Longest Palindrome Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
+[Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
+[Leetcode Problem 610 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
