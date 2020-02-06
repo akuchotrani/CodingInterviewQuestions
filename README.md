@@ -1,4 +1,4 @@
-# CodingInterviewQuestions
+# Coding Interview Questions
 This Repository is aimed to help professional programmers/students improve problem solving and tackle basic concepts.
 The contents are based on questions that we have come across during our interview experiences. 
 
@@ -32,7 +32,7 @@ Dynamic Programming Problems | Difficulty |  solution link
 [Leetcode Problem 62 Unique Paths](https://leetcode.com/problems/unique-paths/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2062%20Unique%20Paths.txt)
 [Leetcode Problem 63 Unique Paths](https://leetcode.com/problems/unique-paths-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2063%20Unique%20Paths%20II.txt)
 [Leetcode Problem 72 Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2072%20Edit%20Distance.txt)
-[Leetcode Problem 198 House Robber]https://leetcode.com/problems/house-robber/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20198%20House%20Robber.txt)
+[Leetcode Problem 198 House Robber](https://leetcode.com/problems/house-robber/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20198%20House%20Robber.txt)
 [Leetcode Problem 322 Coin Change](https://leetcode.com/problems/coin-change/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20322%20Coin%20Change.txt)
 
 
@@ -40,6 +40,8 @@ Linked List Problems | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%202%20Add%20Two%20Numbers%20Python.txt)
 [Leetcode Problem 82 Remove Duplicates from sorted list](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2082%20Remove%20Duplicates%20from%20Sorted%20List.txt)
+[Leetcode Problem 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20141%20Linked%20List%20Cycle.txt)
+[Leetcode Problem 142. Linked List Cycle 2](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 
 
@@ -59,7 +61,7 @@ BFS DFS Problems | Difficulty |  solution link
 
 Two Pointer Problems | Difficulty |  solution link
 ---------------------|------------|----------------
-[Leetcode Problem 3 Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%203%20Longest%20Substring%20Without%20Repeating%20Characters.txt)
+[Leetcode Problem 3 Longest Substring Without Repeating Characters](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%203%20Longest%20Substring%20Without%20Repeating%20Characters.txt)
 [Leetcode Problem 5 Longest Palindrome Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
 [Leetcode Problem 15 3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
@@ -69,5 +71,6 @@ Two Pointer Problems | Difficulty |  solution link
 Recursion & Trees | Difficulty |  solution link
 ------------------|------------|----------------
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
+[Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
 
