@@ -16,6 +16,7 @@ Heap Problems | Difficulty |  solution link
 --------------|------------|----------------
 [Leetcode Problem 19 Merge Two Sorted Lists](https://leetcode.com/problems/add-two-numbers/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 [Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
+[Leetcode Problem 295 Find Median from Data Stream(https://leetcode.com/problems/find-median-from-data-stream/) | Hard | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20295%20Find%20Median%20from%20Data%20Stream.txt)
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
 [Leetcode Problem 703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20703%20Kth%20Largest%20Element%20in%20a%20Stream.txt)
 
@@ -56,6 +57,8 @@ BFS DFS Problems | Difficulty |  solution link
 [Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
 [Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
 [Leetcode Problem 289 Game of life](https://leetcode.com/problems/game-of-life/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20289%20Game%20of%20Life.txt)
+[Leetcode Problem 529. Minesweeper](https://leetcode.com/problems/minesweeper/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20529%20Minesweeper.txt)
+[Leetcode Problem 733. Flood Fill](https://leetcode.com/problems/flood-fill/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20529%20Minesweeper.txt)
 [Leetcode Problem 994 Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20994%20Rotting%20Oranges.txt)
 
 
@@ -71,6 +74,13 @@ Two Pointer Problems | Difficulty |  solution link
 Recursion & Trees | Difficulty |  solution link
 ------------------|------------|----------------
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
-[Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
+[Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
+
+
+Random Algorithm | Difficulty |  solution link
+-----------------|------------|----------------
+[Leetcode Problem 7 Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
+[Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
+
 
