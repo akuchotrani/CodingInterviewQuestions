@@ -16,7 +16,7 @@ Heap Problems | Difficulty |  solution link
 --------------|------------|----------------
 [Leetcode Problem 19 Merge Two Sorted Lists](https://leetcode.com/problems/add-two-numbers/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 [Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
-[Leetcode Problem 295 Find Median from Data Stream(https://leetcode.com/problems/find-median-from-data-stream/) | Hard | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20295%20Find%20Median%20from%20Data%20Stream.txt)
+[Leetcode Problem 295 Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | Hard | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20295%20Find%20Median%20from%20Data%20Stream.txt)
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
 [Leetcode Problem 703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20703%20Kth%20Largest%20Element%20in%20a%20Stream.txt)
 
@@ -54,6 +54,7 @@ Backtracking Problems | Difficulty |  solution link
 
 BFS DFS Problems | Difficulty |  solution link
 -----------------|------------|----------------
+[Leetcode Problem 79. Word Search](https://leetcode.com/problems/word-search/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2079%20Word%20Search.txt)
 [Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
 [Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
 [Leetcode Problem 289 Game of life](https://leetcode.com/problems/game-of-life/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20289%20Game%20of%20Life.txt)
@@ -82,5 +83,14 @@ Random Algorithm | Difficulty |  solution link
 -----------------|------------|----------------
 [Leetcode Problem 7 Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
 [Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
+[Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
+
+
+Trie Algorithm Based | Difficulty |  solution link
+---------------------|------------|----------------
+[Leetcode Problem 208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20208%20Implement%20Trie%20(Prefix%20Tree)%20Python.txt)
+[Leetcode Problem 212. Word Search II](https://leetcode.com/problems/word-search-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20212%20Word%20Search%20II.txt)
+[Leetcode Problem 1233. Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
+
 
 
