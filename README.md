@@ -43,6 +43,7 @@ Linked List Problems | Difficulty |  solution link
 [Leetcode Problem 82 Remove Duplicates from sorted list](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2082%20Remove%20Duplicates%20from%20Sorted%20List.txt)
 [Leetcode Problem 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20141%20Linked%20List%20Cycle.txt)
 [Leetcode Problem 142. Linked List Cycle 2](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
+[Leetcode Problem 146. LRU Cache](https://leetcode.com/problems/lru-cache/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 
 
