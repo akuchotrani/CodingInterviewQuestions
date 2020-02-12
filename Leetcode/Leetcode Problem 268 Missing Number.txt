@@ -1,0 +1,60 @@
+268. Missing Number
+Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
+
+Example 1:
+
+Input: [3,0,1]
+Output: 2
+Example 2:
+
+Input: [9,6,4,2,3,5,7,0,1]
+Output: 8
+Note:
+Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
+
+
+Hint to solve: Series sum formula
+
+class Solution:
+    
+    def longWay(self, nums):
+        isZeroPresent = False
+        isOnePresent = False
+        for num in nums:
+            if isZeroPresent == True and isOnePresent == True:
+                break
+            elif num == 0:
+                isZeroPresent = True
+            elif num == 1:
+                isOnePresent = True
+        
+        if isZeroPresent == False:
+            return 0
+        if isOnePresent == False:
+            return 1
+        
+        for index, num in enumerate(nums):
+            if num >= len(nums) or num == 0:
+                nums[index] = 1
+        print(nums)
+        for index, num in enumerate(nums):
+            jumpIndex = abs(nums[index])
+            nums[jumpIndex] = -1*abs(nums[jumpIndex])
+        
+        print(nums)
+        
+        for index in range(2,len(nums)):
+            if nums[index] > 0:
+                return index
+        
+        return len(nums)
+    
+    def MathFormula(self, nums):
+        actualSum = sum(nums)
+        seriesSum = (len(nums)*(len(nums)+1))/2
+        diff = seriesSum - actualSum
+        return abs(diff)
+        
+    
+    def missingNumber(self, nums: List[int]) -> int:
+        return (int)(self.MathFormula(nums))
