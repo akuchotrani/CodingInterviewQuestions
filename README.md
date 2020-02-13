@@ -43,6 +43,7 @@ Linked List Problems | Difficulty |  solution link
 [Leetcode Problem 82 Remove Duplicates from sorted list](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2082%20Remove%20Duplicates%20from%20Sorted%20List.txt)
 [Leetcode Problem 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20141%20Linked%20List%20Cycle.txt)
 [Leetcode Problem 142. Linked List Cycle 2](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
+[Leetcode Problem 146. LRU Cache](https://leetcode.com/problems/lru-cache/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 
 
@@ -83,6 +84,7 @@ Random Algorithm | Difficulty |  solution link
 -----------------|------------|----------------
 [Leetcode Problem 7 Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
 [Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
+[Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | 
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
 
 
@@ -90,7 +92,12 @@ Trie Algorithm Based | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20208%20Implement%20Trie%20(Prefix%20Tree)%20Python.txt)
 [Leetcode Problem 212. Word Search II](https://leetcode.com/problems/word-search-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20212%20Word%20Search%20II.txt)
-[Leetcode Problem 1233. Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
+[Leetcode Problem 1233. Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201233%20Remove%20Sub-Folders%20from%20the%20Filesystem.txt)
+
+
+Hash maps and Arrays | Difficulty |  solution link
+---------------------|------------|----------------
+[Leetcode Problem 454. 4Sum II](https://leetcode.com/problems/4sum-ii/) | Medium | [Python]
 
 
 
