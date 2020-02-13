@@ -95,4 +95,9 @@ Trie Algorithm Based | Difficulty |  solution link
 [Leetcode Problem 1233. Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201233%20Remove%20Sub-Folders%20from%20the%20Filesystem.txt)
 
 
+Hash maps and Arrays | Difficulty |  solution link
+---------------------|------------|----------------
+[Leetcode Problem 454. 4Sum II](https://leetcode.com/problems/4sum-ii/) | Medium | [Python]
+
+
 
