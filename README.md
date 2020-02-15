@@ -86,6 +86,7 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 7 Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
 [Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | 
+[Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | 
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
 
 
