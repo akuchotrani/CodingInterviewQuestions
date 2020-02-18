@@ -1,0 +1,87 @@
+179. Largest Number
+Given a list of non negative integers, arrange them such that they form the largest number.
+
+Example 1:
+
+Input: [10,2]
+Output: "210"
+Example 2:
+
+Input: [3,30,34,5,9]
+Output: "9534330"
+Note: The result may be very large, so you need to return a string instead of an integer.
+
+
+Hint to solve: Sort the given array with custom logic. str(s1) + str(s2) > str(s2) + str(s1)
+
+
+class Solution:
+        
+    #Approach 1 : Use bubble sort but slower O(n^2)
+    def BubbleSort(self, nums):
+        #sort the numbers using custom comparator logic
+        for i in range(len(nums)):
+            for j in range(i):
+                #print(F'Comparing {nums[i]} with {nums[j]}')
+                if str(nums[i])+str(nums[j]) > str(nums[j]) + str(nums[i]):
+                    temp = nums[i]
+                    nums[i] = nums[j]
+                    nums[j] = temp
+        result = ''
+        for num in nums:
+            result += str(num)
+        
+        return result
+    
+    
+    #Approach 2: Use Merge sort faster O(nlogn)
+    def MergeSort(self, nums, begin, end):
+        if end == begin:
+            return [nums[end]]
+        
+        middle = (int)((begin + end)/2)
+        firstList = self.MergeSort(nums, begin, middle)
+        secondList = self.MergeSort(nums, middle + 1, end)
+        
+        mergedList = self.merge(firstList, secondList)
+        
+        return mergedList
+        
+    def merge(self, firstList, secondList):
+        #print("FirstList: ", firstList, " secondList: ", secondList)
+        firstPtr = 0
+        secondPtr = 0
+        result = []
+        while(firstPtr != len(firstList) and secondPtr != len(secondList)):
+            if str(firstList[firstPtr]) + str(secondList[secondPtr]) > str(secondList[secondPtr]) + str(firstList[firstPtr]):
+                result.append(firstList[firstPtr])
+                firstPtr += 1
+            else:
+                result.append(secondList[secondPtr])
+                secondPtr += 1
+        
+        if firstPtr != len(firstList):
+            while(firstPtr != len(firstList)):
+                result.append(firstList[firstPtr])
+                firstPtr += 1
+        
+        if secondPtr != len(secondList):
+            while(secondPtr != len(secondList)):
+                result.append(secondList[secondPtr])
+                secondPtr += 1
+        
+        return result
+    
+    
+    def largestNumber(self, nums: List[int]) -> str:
+        #Check for edge condition when the only input in the array is 0's
+        if len(nums) > 0 and max(nums) == 0:
+            return "0"
+        
+        #return self.BubbleSort(nums)
+        
+        customSortedList = self.MergeSort(nums, 0, len(nums) - 1)
+        result = ""
+        for num in customSortedList:
+            result += (str)(num)
+        return result
