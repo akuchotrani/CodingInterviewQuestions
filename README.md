@@ -14,7 +14,7 @@ Happy Coding :)
 
 Heap Problems | Difficulty |  solution link
 --------------|------------|----------------
-[Leetcode Problem 21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy | 
+[Leetcode Problem 21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2021%20Merge%20Two%20Sorted%20Lists.txt)
 [Leetcode Problem 23 Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2023%20Merge%20k%20Sorted%20Lists.txt)
 [Leetcode Problem 295 Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | Hard | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20295%20Find%20Median%20from%20Data%20Stream.txt)
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
@@ -101,15 +101,15 @@ Trie Algorithm Based | Difficulty |  solution link
 
 Hash maps and Arrays | Difficulty |  solution link
 ---------------------|------------|----------------
-[Leetcode Problem 1. Two Sum](https://leetcode.com/problems/two-sum/) | Easy | 
+[Leetcode Problem 1. Two Sum](https://leetcode.com/problems/two-sum/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201%20Two%20Sum.txt)
 [Leetcode Problem 454. 4Sum II](https://leetcode.com/problems/4sum-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20454%204Sum%20II.txt)
 
 
 Sort                 | Difficulty |  solution link
 ---------------------|------------|----------------
-[Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | 
+[Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20179%20Largest%20Number.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
-[Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | 
+[Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20315%20Count%20of%20Smaller%20Numbers%20After%20Self.txt)
 
 
 
