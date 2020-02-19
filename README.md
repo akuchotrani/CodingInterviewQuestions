@@ -75,7 +75,7 @@ Two Pointer Problems | Difficulty |  solution link
 
 Recursion & Trees | Difficulty |  solution link
 ------------------|------------|----------------
-[Leetcode Problem 17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2017%20Letter%20Combinations%20of%20a%20phone%20number.txt)
+[Leetcode Problem 17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2017%20Letter%20Combinations%20of%20a%20phone%20number.txt)
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
 [Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
@@ -109,6 +109,8 @@ Sort                 | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | 
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
+[Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | 
+
 
 
 
