@@ -1,0 +1,68 @@
+315. Count of Smaller Numbers After Self
+You are given an integer array nums and you have to return a new counts array. The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].
+
+Example:
+
+Input: [5,2,6,1]
+Output: [2,1,1,0] 
+Explanation:
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.
+
+
+Hint to solve: Use merge sort. Magic happens in the merge method.
+Whenever in the element in the right list is smaller than the element in the left list it needs to perform a jump.
+We record this jump.
+When an element in the left list is smaller than the right list then we add this jumpCounter to the index of the result.
+
+
+class Solution:
+    
+    def MergeSort(self,start, end, nums):
+        
+        if(start == end):
+            return [nums[start]]
+        
+        mid = (int)((start+end)/2)
+        firstList = self.MergeSort(start, mid, nums)
+        secondList = self.MergeSort(mid+1, end, nums)
+        
+        return self.Merge(firstList, secondList)
+    
+    def Merge(self, firstList, secondList):
+        
+        firstPtr = 0
+        secondPtr = 0
+        result = []
+        
+        rightListJumpCounter = 0
+        while(firstPtr != len(firstList) and secondPtr != len(secondList)):
+            if secondList[secondPtr][1] < firstList[firstPtr][1]:
+                result.append(secondList[secondPtr])
+                secondPtr += 1
+                rightListJumpCounter += 1
+            else:
+                result.append(firstList[firstPtr])
+                self.finalResult[firstList[firstPtr][0]] += rightListJumpCounter
+                firstPtr += 1
+        while(firstPtr != len(firstList)):
+            result.append(firstList[firstPtr])
+            self.finalResult[firstList[firstPtr][0]] += rightListJumpCounter
+            firstPtr += 1
+        
+        while(secondPtr != len(secondList)):
+            result.append(secondList[secondPtr])
+            secondPtr += 1
+                
+        return result
+        
+        
+    def countSmaller(self, nums: List[int]) -> List[int]:
+        if len(nums) == 0:
+            return []
+        
+        self.finalResult = [0 for _ in range(len(nums))]
+        self.MergeSort(0, len(nums)- 1, list(enumerate(nums)))
+        return self.finalResult
