@@ -69,6 +69,7 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 3 Longest Substring Without Repeating Characters](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%203%20Longest%20Substring%20Without%20Repeating%20Characters.txt)
 [Leetcode Problem 5 Longest Palindrome Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
 [Leetcode Problem 15 3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt)
+[Leetcode Problem 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2026%20Remove%20Duplicates%20from%20Sorted%20Array.txt)
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
 
@@ -76,6 +77,7 @@ Two Pointer Problems | Difficulty |  solution link
 Recursion & Trees | Difficulty |  solution link
 ------------------|------------|----------------
 [Leetcode Problem 17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2017%20Letter%20Combinations%20of%20a%20phone%20number.txt)
+[Leetcode Problem 22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2022%20Generate%20Parentheses.txt)
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
 [Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
@@ -111,6 +113,11 @@ Sort                 | Difficulty |  solution link
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 [Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20315%20Count%20of%20Smaller%20Numbers%20After%20Self.txt)
 
+
+Stack Problems 		 | Difficulty |  solution link
+---------------------|------------|----------------
+[Leetcode Problem 20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | 
+[Leetcode Problem 341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) | Medium | 
 
 
 
