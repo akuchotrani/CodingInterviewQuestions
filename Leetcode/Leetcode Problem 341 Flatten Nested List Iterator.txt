@@ -1,0 +1,147 @@
+341. Flatten Nested List Iterator
+Given a nested list of integers, implement an iterator to flatten it.
+
+Each element is either an integer, or a list -- whose elements may also be integers or other lists.
+
+Example 1:
+
+Input: [[1,1],2,[1,1]]
+Output: [1,1,2,1,1]
+Explanation: By calling next repeatedly until hasNext returns false, 
+             the order of elements returned by next should be: [1,1,2,1,1].
+Example 2:
+
+Input: [1,[4,[6]]]
+Output: [1,4,6]
+Explanation: By calling next repeatedly until hasNext returns false, 
+             the order of elements returned by next should be: [1,4,6].
+
+
+
+Hint to solve: Use stack and keep track of the indices.
+Recursively do
+	If index == len(stack) then pop the frame and return False
+	If element at index is integer return True and increment the integer
+	If element at index is list append it to the stack and increment the original integer
+
+Input: [1,[4,[6]]]
+Stack
+[
+	[1,[4,[6]]],0
+]
+
+Since element at index 0 is integer we return True and increment the index
+[
+	[1,[4,[6]]],1
+]
+Result: [1]
+
+#################################
+
+Since element at index 1 is a list we append this new list to the stack with index 0
+[
+	[1,[4,[6]]],2
+	[4,[6]],0
+]
+Element at index 0 is an integer we return True and increment the index
+[
+	[1,[4,[6]]],2]
+	[4,[6]],1]
+]
+Result: [1,4]
+
+##################################
+
+[
+	[1,[4,[6]]],2]
+	[4,[6]],1]
+]
+
+Element at index 1 is a list so we append it to the stack with index 0
+[
+	[1,[4,[6]]],2]
+	[4,[6]],2]
+	[[6],0]
+]
+Element at index 0 is an integer we return True and the original call increments the counter
+[
+	[1,[4,[6]]],2]
+	[4,[6]],2]
+	[[6],1]
+]
+Result: [1,4,6]
+
+##################################
+Remove 6 from the stack since it's the end of the list
+[
+	[1,[4,[6]]],2
+	[4,[6]],2]
+]
+
+Remove [4,[6]] from the stack since all of them are explored
+[
+	[1,[4,[6]]],2]
+]
+
+Remove [1,[4,[6]]] from the stack since all of them are explored
+[
+]
+
+Stack is empty hence return False no more elements left to explore.
+Final Result : [1,4,6]
+
+
+Solution : 
+
+# """
+# This is the interface that allows for creating nested lists.
+# You should not implement it, or speculate about its implementation
+# """
+#class NestedInteger:
+#    def isInteger(self) -> bool:
+#        """
+#        @return True if this NestedInteger holds a single integer, rather than a nested list.
+#        """
+#
+#    def getInteger(self) -> int:
+#        """
+#        @return the single integer that this NestedInteger holds, if it holds a single integer
+#        Return None if this NestedInteger holds a nested list
+#        """
+#
+#    def getList(self) -> [NestedInteger]:
+#        """
+#        @return the nested list that this NestedInteger holds, if it holds a nested list
+#        Return None if this NestedInteger holds a single integer
+#        """
+
+class NestedIterator:
+    def __init__(self, nestedList: [NestedInteger]):
+        self.stack = [[nestedList,0]]
+    
+    def next(self) -> int:
+        #Getting the last element from the stack.
+        nestedList, index = self.stack[-1]
+        self.stack[-1][1] += 1
+        return nestedList[index].getInteger()
+    
+    def hasNext(self) -> bool:
+        myStack = self.stack
+        while myStack:
+            nestedList, index = myStack[-1]
+            if index == len(nestedList):
+                myStack.pop()
+            else:
+                temp = nestedList[index]
+                if temp.isInteger():
+                    return True
+                else:
+                    myStack[-1][1] += 1
+                    myStack.append([temp.getList(),0])
+        return False
+                    
+         
+
+# Your NestedIterator object will be instantiated and called as such:
+# i, v = NestedIterator(nestedList), []
+# while i.hasNext(): v.append(i.next())
