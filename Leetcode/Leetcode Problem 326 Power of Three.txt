@@ -1,0 +1,54 @@
+326. Power of Three
+Given an integer, write a function to determine if it is a power of three.
+
+Example 1:
+
+Input: 27
+Output: true
+Example 2:
+
+Input: 0
+Output: false
+Example 3:
+
+Input: 9
+Output: true
+Example 4:
+
+Input: 45
+Output: false
+Follow up:
+Could you do it without using any loop / recursion?
+
+
+Hint to solve: Recursive, iterative and logarithmic ways
+x = 3^i
+i = log(x)/log(3)
+if i is an integer then the given number is divisible by power of three.
+
+
+class Solution:
+    
+    def recursive(self, n) -> bool:
+        return n > 0 and (n == 1 or (n%3 == 0 and self.recursive(n/3)))
+    
+    def iterative(self, n) -> bool:
+        while(n > 0):
+            if n == 1:
+                return True
+            if n%3 == 0:
+                n = n/3
+            else:
+                return False
+        return False
+    
+    def logarithm(self, n)-> bool:
+        if n > 0:
+            return (math.log10(n)/math.log10(3)) % 1 == 0;
+        else:
+            return False
+        
+    def isPowerOfThree(self, n: int) -> bool:
+        #return self.recursive(n)
+        #return self.iterative(n)
+        return self.logarithm(n)
