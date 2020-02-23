@@ -19,7 +19,7 @@ Heap Problems | Difficulty |  solution link
 [Leetcode Problem 295 Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | Hard | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20295%20Find%20Median%20from%20Data%20Stream.txt)
 [Leetcode Problem 692 Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) | Medium | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20692%20Top%20K%20Frequent%20Words.txt)
 [Leetcode Problem 703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Easy | [python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20703%20Kth%20Largest%20Element%20in%20a%20Stream.txt)
-
+[Leetcode Problem 973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | Medium | 
 
 Binary Search Problems | Difficulty |  solution link
 -----------------------|------------|----------------
@@ -33,6 +33,8 @@ Dynamic Programming Problems | Difficulty |  solution link
 [Leetcode Problem 62 Unique Paths](https://leetcode.com/problems/unique-paths/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2062%20Unique%20Paths.txt)
 [Leetcode Problem 63 Unique Paths](https://leetcode.com/problems/unique-paths-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2063%20Unique%20Paths%20II.txt)
 [Leetcode Problem 72 Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2072%20Edit%20Distance.txt)
+[Leetcode Problem 139. Word Break](https://leetcode.com/problems/word-break/) | Medium | 
+[Leetcode Problem 140. Word Break II](https://leetcode.com/problems/word-break-ii/) | Hard | 
 [Leetcode Problem 198 House Robber](https://leetcode.com/problems/house-robber/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20198%20House%20Robber.txt)
 [Leetcode Problem 322 Coin Change](https://leetcode.com/problems/coin-change/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20322%20Coin%20Change.txt)
 
@@ -55,6 +57,7 @@ Backtracking Problems | Difficulty |  solution link
 BFS DFS Problems | Difficulty |  solution link
 -----------------|------------|----------------
 [Leetcode Problem 79. Word Search](https://leetcode.com/problems/word-search/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2079%20Word%20Search.txt)
+[Leetcode Problem 102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Medium | 
 [Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
 [Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
 [Leetcode Problem 289 Game of life](https://leetcode.com/problems/game-of-life/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20289%20Game%20of%20Life.txt)
@@ -91,6 +94,8 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
+[Leetcode Problem 326. Power of Three](https://leetcode.com/problems/power-of-three/) | Easy | 
+[Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | 
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
 
 
@@ -104,6 +109,7 @@ Trie Algorithm Based | Difficulty |  solution link
 Hash maps and Arrays | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 1. Two Sum](https://leetcode.com/problems/two-sum/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201%20Two%20Sum.txt)
+[Leetcode Problem 138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) | Medium | 
 [Leetcode Problem 454. 4Sum II](https://leetcode.com/problems/4sum-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20454%204Sum%20II.txt)
 
 
