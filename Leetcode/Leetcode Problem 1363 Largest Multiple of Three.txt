@@ -1,0 +1,103 @@
+1363. Largest Multiple of Three
+
+Given an integer array of digits, return the largest multiple of three that can be formed by concatenating some of the given digits in any order.
+
+Since the answer may not fit in an integer data type, return the answer as a string.
+
+If there is no answer return an empty string.
+
+ 
+
+Example 1:
+
+Input: digits = [8,1,9]
+Output: "981"
+Example 2:
+
+Input: digits = [8,6,7,1,0]
+Output: "8760"
+Example 3:
+
+Input: digits = [1]
+Output: ""
+Example 4:
+
+Input: digits = [0,0,0,0,0,0]
+Output: "0"
+ 
+
+Constraints:
+
+1 <= digits.length <= 10^4
+0 <= digits[i] <= 9
+The returning answer must not contain unnecessary leading zeros.
+
+
+
+Hint to solve: Sort the given array in decending order.
+If total of the elements in the array is divisible by 3 then it's the answer
+If the total % 3 == 1:
+	- Try to remove a smallest number with remainder 1 from the list when divided by 3
+	- Else try to remove two  smallest numbers with remainder 2 from the list when divided by 3
+If the total % 3 == 2:
+	- Try to remove a smallest number with remainder 2 from the list when divided by 3
+	- Else try to remove two smallest numbers with remainder 1 from the list when divided by 3
+
+class Solution:
+    
+    def convertToString(self,nums):
+        s = [str(i) for i in nums] 
+        res = str("".join(s))
+        return res
+    
+    
+    def RemoveSingleDigitRemainderOne(self, nums):
+        #print("Trying to remove single digit remainder one")
+
+        for index in range(len(nums) - 1, -1, -1):
+            if nums[index] % 3 == 1:
+                del nums[index]
+                return True
+        return False
+    
+    def RemoveSingleDigitRemainderTwo(self, nums):
+        #print("Trying to remove single digit remainder two")
+        for index in range(len(nums) - 1, -1, -1):
+            if nums[index] % 3 == 2:
+                del nums[index]
+                return True
+        return False                
+            
+        
+    
+    
+    def largestMultipleOfThree(self, digits: List[int]) -> str:
+        
+        if max(digits) == 0:
+            return "0"
+        
+        digits.sort(reverse=True)
+        print(digits)
+        
+        digitSum = sum(digits)
+        if digitSum%3 == 0:
+            return self.convertToString(digits)
+        
+        if digitSum%3 == 1:
+            #Remove single digit with remainder 1
+            if self.RemoveSingleDigitRemainderOne(digits):
+                return self.convertToString(digits)
+            else:
+                if self.RemoveSingleDigitRemainderTwo(digits):
+                    if self.RemoveSingleDigitRemainderTwo(digits):
+                        return self.convertToString(digits)
+        
+        if digitSum%3 == 2:
+            #Remove single digit with remainder 2
+            if self.RemoveSingleDigitRemainderTwo(digits):
+                return self.convertToString(digits)
+            else:
+                if self.RemoveSingleDigitRemainderOne(digits):
+                    if self.RemoveSingleDigitRemainderOne(digits):
+                        return self.convertToString(digits)        
+        return ""
