@@ -1,0 +1,61 @@
+1362. Closest Divisors
+Given an integer num, find the closest two integers in absolute difference whose product equals num + 1 or num + 2.
+
+Return the two integers in any order.
+
+ 
+
+Example 1:
+
+Input: num = 8
+Output: [3,3]
+Explanation: For num + 1 = 9, the closest divisors are 3 & 3, for num + 2 = 10, the closest divisors are 2 & 5, hence 3 & 3 is chosen.
+Example 2:
+
+Input: num = 123
+Output: [5,25]
+Example 3:
+
+Input: num = 999
+Output: [40,25]
+ 
+
+Constraints:
+
+1 <= num <= 10^9
+
+
+Hint to solve: Find divisors until the sqrt of the number
+
+class Solution:
+    
+    def divisors(self,num):
+        
+        closestDiff = num
+        result = [0,0]
+        for i in range(1,(int)(math.sqrt(num)+1)):
+            if num % i == 0:
+                first = i
+                second =(int)(num/i)
+                diff = abs(first - second)
+                if diff < closestDiff:
+                    result[0] = first
+                    result[1] = second
+                    closestDiff = diff
+        return result
+                
+    
+    def closestDivisors(self, num: int) -> List[int]:
+        
+        num1 = num + 1
+        firstResult = self.divisors(num1)
+        print(f"firstResult: {firstResult}")
+        
+        num2 = num + 2
+        secondResult = self.divisors(num2)
+        print(f"secondResult:{secondResult}")
+        
+        if abs(firstResult[0] - firstResult[1]) < abs(secondResult[0] - secondResult[1]):
+            return firstResult
+        else:
+            return secondResult
