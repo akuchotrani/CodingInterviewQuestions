@@ -24,6 +24,8 @@ Heap Problems | Difficulty |  solution link
 Binary Search Problems | Difficulty |  solution link
 -----------------------|------------|----------------
 [Leetcode Problem 4 Median of two sorted arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
+[Leetcode Problem 33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2033%20Search%20in%20Rotated%20Sorted%20Array.txt)
+[Leetcode Problem 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2034%20Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array.txt)
 [Leetcode Problem 162 Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20162%20Find%20Peak%20Element.txt)
 
 
@@ -42,6 +44,7 @@ Dynamic Programming Problems | Difficulty |  solution link
 Linked List Problems | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%202%20Add%20Two%20Numbers%20Python.txt)
+[Leetcode Problem 19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium | 
 [Leetcode Problem 82 Remove Duplicates from sorted list](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2082%20Remove%20Duplicates%20from%20Sorted%20List.txt)
 [Leetcode Problem 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20141%20Linked%20List%20Cycle.txt)
 [Leetcode Problem 142. Linked List Cycle 2](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20142%20Linked%20List%20Cycle%202%20find%20where%20loop%20begins.txt)
@@ -84,6 +87,8 @@ Recursion & Trees | Difficulty |  solution link
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
 [Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
+[Leetcode Problem 297. Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Hard | [Python]
+
 
 
 Random Algorithm | Difficulty |  solution link
@@ -91,6 +96,7 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 7 Reverse Integer](https://leetcode.com/problems/reverse-integer/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%207%20Reverse%20Integer.txt)
 [Leetcode Problem 9. Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%209%20Palindrome.txt)
 [Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
+[Leetcode Problem 36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2036%20Valid%20Sudoku.txt)
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
