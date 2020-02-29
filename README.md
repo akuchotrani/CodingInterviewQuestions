@@ -99,6 +99,7 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2036%20Valid%20Sudoku.txt)
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
+[Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python]
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
 [Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | 
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
