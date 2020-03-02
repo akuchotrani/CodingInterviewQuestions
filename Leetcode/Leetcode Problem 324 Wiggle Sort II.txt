@@ -1,0 +1,49 @@
+324. Wiggle Sort II
+Given an unsorted array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]....
+
+Example 1:
+
+Input: nums = [1, 5, 1, 1, 6, 4]
+Output: One possible answer is [1, 4, 1, 5, 1, 6].
+Example 2:
+
+Input: nums = [1, 3, 2, 2, 3, 1]
+Output: One possible answer is [2, 3, 1, 3, 1, 2].
+Note:
+You may assume all input has valid answer.
+
+Follow Up:
+Can you do it in O(n) time and/or in-place with O(1) extra space?
+
+
+Hint to solve: Sort the given list. Divide into two half and reverse each part. Take one element from each.
+
+
+class Solution:
+    def wiggleSort(self, nums: List[int]) -> None:
+        
+        nums.sort()
+        #Take the ceil for odd number of elements in the list.
+        half = (int)(math.ceil(len(nums)/2))
+        
+        #Divide the list into two half and reverse it.
+        #We need to reverse it if there is an edge case example: [4,5,5,6]
+        firstHalf = nums[0:half]
+        firstHalf.reverse()
+        secondHalf = nums[half:len(nums)]
+        secondHalf.reverse()
+        
+        #print(f'firstHalf: {firstHalf} and secondHalf: {secondHalf}')
+
+        low = 0
+        high = 0
+        for i in range(len(nums)):
+            #We want small elements at even index
+            if i % 2 == 0:
+                nums[i] = firstHalf[low]
+                low += 1
+            #We want big elements at odd index
+            else:
+                nums[i] = secondHalf[high]
+                high += 1
+        return nums

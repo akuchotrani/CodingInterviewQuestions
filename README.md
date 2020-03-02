@@ -32,13 +32,19 @@ Binary Search Problems | Difficulty |  solution link
 Dynamic Programming Problems | Difficulty |  solution link
 -----------------------------|------------|----------------
 [Leetcode Problem 44 Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2044%20Wildcard%20Matching.txt)
+[Leetcode Problem 55. Jump Game](https://leetcode.com/problems/jump-game/) | Medium | 
 [Leetcode Problem 62 Unique Paths](https://leetcode.com/problems/unique-paths/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2062%20Unique%20Paths.txt)
 [Leetcode Problem 63 Unique Paths](https://leetcode.com/problems/unique-paths-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2063%20Unique%20Paths%20II.txt)
+[Leetcode Problem 64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | Medium | 
 [Leetcode Problem 72 Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2072%20Edit%20Distance.txt)
+[Leetcode Problem 85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | Hard | 
 [Leetcode Problem 139. Word Break](https://leetcode.com/problems/word-break/) | Medium | 
 [Leetcode Problem 140. Word Break II](https://leetcode.com/problems/word-break-ii/) | Hard | 
 [Leetcode Problem 198 House Robber](https://leetcode.com/problems/house-robber/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20198%20House%20Robber.txt)
+[Leetcode Problem 221. Maximal Square](https://leetcode.com/problems/maximal-square/) | Medium | 
 [Leetcode Problem 322 Coin Change](https://leetcode.com/problems/coin-change/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20322%20Coin%20Change.txt)
+[Leetcode Problem 1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) | Medium | 
+
 
 
 Linked List Problems | Difficulty |  solution link
@@ -53,8 +59,10 @@ Linked List Problems | Difficulty |  solution link
 
 Backtracking Problems | Difficulty |  solution link
 ----------------------|------------|----------------
+[Leetcode Problem 39. Combination Sum](https://leetcode.com/problems/combination-sum/) | Medium | [CSharp]
 [Leetcode Problem 51 N-Queens](https://leetcode.com/problems/n-queens/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2051%20N-Queens.txt)
 [Leetcode Problem 72 Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2072%20Edit%20Distance.txt)
+[Leetcode Problem 78. Subsets](https://leetcode.com/problems/subsets/) | Medium | [Python]
 
 
 BFS DFS Problems | Difficulty |  solution link
@@ -84,6 +92,7 @@ Recursion & Trees | Difficulty |  solution link
 ------------------|------------|----------------
 [Leetcode Problem 17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2017%20Letter%20Combinations%20of%20a%20phone%20number.txt)
 [Leetcode Problem 22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2022%20Generate%20Parentheses.txt)
+[Leetcode Problem 46. Permutations](https://leetcode.com/problems/permutations/) | Medium | [Python]
 [Leetcode Problem 94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2094%20Binary%20Tree%20Inorder%20Traversal.txt)
 [Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
@@ -97,8 +106,14 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 9. Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%209%20Palindrome.txt)
 [Leetcode Problem 13 Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | Easy | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
 [Leetcode Problem 36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2036%20Valid%20Sudoku.txt)
+[Leetcode Problem 41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | Hard | [Python]
+[Leetcode Problem 42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | [Python]
+[Leetcode Problem 53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | Easy | [Python]
+[Leetcode Problem 54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | Medium | [Python]
+[Leetcode Problem 59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) | Medium | [Python]
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
+[Leetcode Problem 324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | [Python]
 [Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python]
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
 [Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | 
