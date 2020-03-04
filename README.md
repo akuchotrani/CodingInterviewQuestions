@@ -97,6 +97,7 @@ Recursion & Trees | Difficulty |  solution link
 [Leetcode Problem 100. Same Tree](https://leetcode.com/problems/same-tree/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20100%20Same%20Tree.txt)
 [Leetcode Problem 101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20101%20Symmetric%20tree.txt)
 [Leetcode Problem 297. Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Hard | [Python]
+[Leetcode Problem 1367. Linked List in Binary Tree](https://leetcode.com/problems/linked-list-in-binary-tree/) | Medium | [Python]
 
 
 
@@ -113,7 +114,6 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) | Medium | [Python]
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
-[Leetcode Problem 324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | [Python]
 [Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python]
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
 [Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | 
@@ -139,6 +139,7 @@ Sort                 | Difficulty |  solution link
 [Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20179%20Largest%20Number.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 [Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20315%20Count%20of%20Smaller%20Numbers%20After%20Self.txt)
+[Leetcode Problem 324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | [Python]
 
 
 Stack Problems 		 | Difficulty |  solution link
