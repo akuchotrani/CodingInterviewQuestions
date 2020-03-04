@@ -26,6 +26,7 @@ Binary Search Problems | Difficulty |  solution link
 [Leetcode Problem 4 Median of two sorted arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Hard | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%204%20Median%20of%20Two%20Sorted%20Arrays.txt)
 [Leetcode Problem 33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2033%20Search%20in%20Rotated%20Sorted%20Array.txt)
 [Leetcode Problem 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2034%20Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array.txt)
+[Leetcode Problem 74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | Medium | 
 [Leetcode Problem 162 Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20162%20Find%20Peak%20Element.txt)
 
 
@@ -36,6 +37,7 @@ Dynamic Programming Problems | Difficulty |  solution link
 [Leetcode Problem 62 Unique Paths](https://leetcode.com/problems/unique-paths/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2062%20Unique%20Paths.txt)
 [Leetcode Problem 63 Unique Paths](https://leetcode.com/problems/unique-paths-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2063%20Unique%20Paths%20II.txt)
 [Leetcode Problem 64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | Medium | 
+[Leetcode Problem 70. Climbing Stairs]https://leetcode.com/problems/climbing-stairs/) | Easy | 
 [Leetcode Problem 72 Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2072%20Edit%20Distance.txt)
 [Leetcode Problem 85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | Hard | 
 [Leetcode Problem 139. Word Break](https://leetcode.com/problems/word-break/) | Medium | 
@@ -84,6 +86,7 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 5 Longest Palindrome Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
 [Leetcode Problem 15 3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt)
 [Leetcode Problem 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2026%20Remove%20Duplicates%20from%20Sorted%20Array.txt)
+[Leetcode Problem 76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | 
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
 
@@ -112,6 +115,8 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | Easy | [Python]
 [Leetcode Problem 54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | Medium | [Python]
 [Leetcode Problem 59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) | Medium | [Python]
+[Leetcode Problem 66. Plus One](https://leetcode.com/problems/plus-one/) | Medium | [Python]
+[Leetcode Problem 73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | Medium | [Python]
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
 [Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python]
@@ -136,6 +141,7 @@ Hash maps and Arrays | Difficulty |  solution link
 
 Sort                 | Difficulty |  solution link
 ---------------------|------------|----------------
+[Leetcode Problem 75. Sort Colors](https://leetcode.com/problems/sort-colors/) | Medium | 
 [Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20179%20Largest%20Number.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 [Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20315%20Count%20of%20Smaller%20Numbers%20After%20Self.txt)
@@ -150,6 +156,7 @@ Stack Problems 		 | Difficulty |  solution link
 
 Math Problems 		 | Difficulty |  solution link
 ---------------------|------------|----------------
+[Leetcode Problem 74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | Medium | 
 [Leetcode Problem 326. Power of Three](https://leetcode.com/problems/power-of-three/) | Easy | 
 [Leetcode Problem 1362. Closest Divisors](https://leetcode.com/problems/closest-divisors/) | Medium | 
 [Leetcode Problem 1363. Largest Multiple of Three](https://leetcode.com/problems/largest-multiple-of-three/) | Hard | 
