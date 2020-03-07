@@ -45,6 +45,7 @@ Dynamic Programming Problems | Difficulty |  solution link
 [Leetcode Problem 198 House Robber](https://leetcode.com/problems/house-robber/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20198%20House%20Robber.txt)
 [Leetcode Problem 221. Maximal Square](https://leetcode.com/problems/maximal-square/) | Medium | 
 [Leetcode Problem 322 Coin Change](https://leetcode.com/problems/coin-change/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20322%20Coin%20Change.txt)
+[Leetcode Problem 348. Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) | Medium | 
 [Leetcode Problem 1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) | Medium | 
 
 
