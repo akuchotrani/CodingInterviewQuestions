@@ -90,7 +90,7 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 5 Longest Palindrome Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%205%20Longest%20Palindromic%20Substring.txt)
 [Leetcode Problem 15 3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt)
 [Leetcode Problem 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2026%20Remove%20Duplicates%20from%20Sorted%20Array.txt)
-[Leetcode Problem 76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | (https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2076%20Minimum%20Window%20Substring.txt)
+[Leetcode Problem 76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2076%20Minimum%20Window%20Substring.txt)
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
 
@@ -160,7 +160,7 @@ Sort                 | Difficulty |  solution link
 [Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20179%20Largest%20Number.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
 [Leetcode Problem 315. Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20315%20Count%20of%20Smaller%20Numbers%20After%20Self.txt)
-[Leetcode Problem 324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20324%20Wiggle%20Sort%20II.txt)
+[Leetcode Problem 324. Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20324%20Wiggle%20Sort%20II.txt)
 
 
 Stack Problems 		 | Difficulty |  solution link
