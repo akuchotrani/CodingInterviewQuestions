@@ -1,0 +1,43 @@
+Hint
+Keep flipping the pointers with two nodes at a time.
+Keep track of next possible pair pointer
+Keep track of previous flipped pointer to last node pair.
+
+
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if head == None or head.next == None:
+            return head
+        
+        resultPtr = None
+        previousPair = None
+        while head != None and head.next != None:
+            firstPtr = head
+            secondPtr = head.next
+            connectingPtr = secondPtr.next
+            
+            #print(f"{firstPtr.val} {secondPtr.val}")
+
+            secondPtr.next = firstPtr
+            firstPtr.next = connectingPtr
+            
+            if previousPair != None:  
+                previousPair.next = secondPtr
+                
+            previousPair = firstPtr
+
+            
+            if resultPtr == None:
+                resultPtr = secondPtr
+            
+            head = connectingPtr
+        
+        return resultPtr

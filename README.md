@@ -54,6 +54,7 @@ Linked List Problems | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%202%20Add%20Two%20Numbers%20Python.txt)
 [Leetcode Problem 19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20problem%2019%20Remove%20Nth%20node%20from%20end%20of%20the%20list.txt)
+[Leetcode Problem 24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | Medium | [Python]()
 [Leetcode Problem 82 Remove Duplicates from sorted list](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2082%20Remove%20Duplicates%20from%20Sorted%20List.txt)
 [Leetcode Problem 92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2092%20Reverse%20Linked%20List%20II.txt)
 [Leetcode Problem 141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Medium | [CSharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20141%20Linked%20List%20Cycle.txt)
