@@ -139,7 +139,7 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
 [Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20384%20Shuffle%20an%20Array.txt)
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
-
+[Leetcode Problem 1480 running sum of 1d array](https://leetcode.com/problems/running-sum-of-1d-array/description/?envType=study-plan&id=level-1) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201480%20Running%20Sum%20of%201d%20Array.txt)
 
 Trie Algorithm Based | Difficulty |  solution link
 ---------------------|------------|----------------
