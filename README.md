@@ -94,6 +94,7 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2026%20Remove%20Duplicates%20from%20Sorted%20Array.txt)
 [Leetcode Problem 76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2076%20Minimum%20Window%20Substring.txt)
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
+[Leetcode Problem 392 Is Subsequence](https://leetcode.com/problems/is-subsequence/description/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20392%20Is%20Subsequence.txt)
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
 
 
@@ -153,6 +154,7 @@ Hash maps and Arrays | Difficulty |  solution link
 [Leetcode Problem 1. Two Sum](https://leetcode.com/problems/two-sum/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201%20Two%20Sum.txt)
 [Leetcode Problem 128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Medium | [Csharp](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20128%20Longest%20Consecutive%20Sequence.txt)
 [Leetcode Problem 138. Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20138%20Copy%20List%20with%20Random%20Pointer.txt)
+[Leetcode Problem 290. Word Pattern](https://leetcode.com/problems/word-pattern/description/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20290%20Word%20Pattern.txt)
 [Leetcode Problem 340. Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/) | Hard | [Python]
 [Leetcode Problem 454. 4Sum II](https://leetcode.com/problems/4sum-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20454%204Sum%20II.txt)
 
