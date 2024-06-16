@@ -162,6 +162,7 @@ Hash maps and Arrays | Difficulty |  solution link
 Sort                 | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 75. Sort Colors](https://leetcode.com/problems/sort-colors/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2075%20Sort%20Colors.txt)
+[Leetcode Problem 80. Remove duplicates from sorted arrary II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2080%20Remove%20Duplicates%20from%20Sorted%20Arrary%20II.txt)
 [Leetcode Problem 88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2088%20Merge%20Sorted%20Array.txt)
 [Leetcode Problem 179. Largest Number](https://leetcode.com/problems/largest-number/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20179%20Largest%20Number.txt)
 [Leetcode Problem 148. Sort List](https://leetcode.com/problems/sort-list/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20148%20Sort%20List.txt)
