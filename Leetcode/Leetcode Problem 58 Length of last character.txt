@@ -61,3 +61,25 @@ class Solution:
                 #print(f"end: {end}")
                 break
         return start - end + 1
+
+
+
+
+Alternate easy solution with O(N) space complexity
+
+
+Time complexity:
+1. Stripping trailing whitespaces takes linear time, so it's O(n) where n is the length of the input string.
+2. Splitting the string into words also takes linear time, so it's also O(n).
+3. The overall time complexity is O(n).
+Space complexity:
+We store the list of words, which could take up to O(n) space if all characters in the input string are non-whitespace.
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        words = s.strip().split()
+        
+        if not words:
+            return 0
+        
+        return len(words[-1])
