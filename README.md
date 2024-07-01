@@ -176,6 +176,7 @@ Sort                 | Difficulty |  solution link
 Stack Problems 		 | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | 
+[Leetcode Problem 224. Basic calculator](https://leetcode.com/problems/basic-calculator) | Hard | [Python]()
 [Leetcode Problem 341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20341%20Flatten%20Nested%20List%20Iterator.txt)
 
 

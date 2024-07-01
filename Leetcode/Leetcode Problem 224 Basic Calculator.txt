@@ -1,0 +1,135 @@
+224. Basic Calculator
+
+
+Given a string s representing a valid expression, implement a basic calculator to evaluate it, and return the result of the evaluation.
+
+Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().
+
+ 
+
+Example 1:
+
+Input: s = "1 + 1"
+Output: 2
+Example 2:
+
+Input: s = " 2-1 + 2 "
+Output: 3
+Example 3:
+
+Input: s = "(1+(4+5+2)-3)+(6+8)"
+Output: 23
+ 
+
+Constraints:
+
+1 <= s.length <= 3 * 105
+s consists of digits, '+', '-', '(', ')', and ' '.
+s represents a valid expression.
+'+' is not used as a unary operation (i.e., "+1" and "+(2 + 3)" is invalid).
+'-' could be used as a unary operation (i.e., "-1" and "-(2 + 3)" is valid).
+There will be no two consecutive operators in the input.
+Every number and running calculation will fit in a signed 32-bit integer.
+
+
+
+Hint: 
+1) Use stack
+2) Use stack to store the sign
+3) Append the sign when seeing '(' and Pop the sign when seeing ')'
+5) If seeing a digit calculate intermediate number since it could be multidigit
+6) If seeing '+' or '-' calcuate the intermediate answer and reset the sign based on top of the stack. (negative * negative is positive)
+
+from collections import deque
+class Solution:
+
+    def calculate(self, s: str) -> int:
+        final_answer = 0
+        sign = 1 # 1 indicates positive sign
+        number= 0 # This is the multidigit/single number that is present while parsing string.
+        stack = [sign] # make the stack positive by default. 
+        
+        for character in s:
+            #print(f"character: {character}")
+            if character.isdigit():
+                number = number * 10 + int(character)
+                #print(f'number: {number}')
+            elif character == '+' or character == '-':
+                final_answer += sign * number
+                #print(f'final_answer: {final_answer}')
+                number = 0 # Resetting the number to 0
+                #Below Resetting the sign
+                if character == '+':
+                    sign = 1 * stack[-1]
+                elif character == '-':
+                    sign = -1 * stack[-1]
+            elif character == '(':
+                stack.append(sign) # Remember the sign before the left parenthesis started
+            elif character == ')':
+                stack.pop() # Remove the +1 or -1 since we need to remove one level of nesting
+            #print(f'stack: {stack}')
+        
+        # Return final answer with any leftover number
+        return final_answer + sign*number
+            
+
+
+Example log 1:
+
+s ="1 + 1"
+
+Stdout
+character: 1
+number: 1
+stack: [1]
+character:  
+stack: [1]
+character: +
+final_answer: 1
+stack: [1]
+character:  
+stack: [1]
+character: 1
+number: 1
+stack: [1]
+
+Output
+2
+Expected
+2
+
+
+Example log 2:
+s = "(1-(-1-1))"
+character: (
+stack: [1, 1]
+character: 1
+number: 1
+stack: [1, 1]
+character: -
+final_answer: 1
+stack: [1, 1]
+character: (
+stack: [1, 1, -1]
+character: -
+final_answer: 1
+stack: [1, 1, -1]
+character: 1
+number: 1
+stack: [1, 1, -1]
+character: -
+final_answer: 2
+stack: [1, 1, -1]
+character: 1
+number: 1
+stack: [1, 1, -1]
+character: )
+stack: [1, 1]
+character: )
+stack: [1]
+View less
+
+Output
+3
+Expected
+3
