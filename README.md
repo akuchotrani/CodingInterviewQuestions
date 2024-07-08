@@ -137,8 +137,8 @@ Random Algorithm | Difficulty |  solution link
 [Leetcode Problem 73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2073%20Set%20Matrix%20Zeroes.txt)
 [Leetcode Problem 190. Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20190%20Reverse%20Bits.txt)
 [Leetcode Problem 268 Missing Number](https://leetcode.com/problems/missing-number/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20268%20Missing%20Number.txt)
-[Leetcode Problem 277. Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) | Medium | [Python]
-[Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python]
+[Leetcode Problem 277. Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20277%20Find%20the%20Celebrity.txt)
+[Leetcode Problem 334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20334%20Increasing%20Triplet%20Subsequence.txt)
 [Leetcode Problem 344. Reverse String](https://leetcode.com/problems/reverse-string/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20344%20Reverse%20String.txt)
 [Leetcode Problem 384. Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20384%20Shuffle%20an%20Array.txt)
 [Leetcode Problem 415. Add Strings](https://leetcode.com/problems/add-strings/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2013%20Roman%20to%20Integer.txt)
@@ -176,8 +176,9 @@ Sort                 | Difficulty |  solution link
 Stack Problems 		 | Difficulty |  solution link
 ---------------------|------------|----------------
 [Leetcode Problem 20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | 
-[Leetcode Problem 224. Basic calculator](https://leetcode.com/problems/basic-calculator) | Hard | [Python]()
+[Leetcode Problem 224. Basic calculator](https://leetcode.com/problems/basic-calculator) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20224%20Basic%20Calculator.txt)
 [Leetcode Problem 341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20341%20Flatten%20Nested%20List%20Iterator.txt)
+[Leetcode Problem 1249. Minimum Remove to Make Valid Parentheses](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/) | Medium | 
 
 
 Math Problems 		 | Difficulty |  solution link
