@@ -92,12 +92,14 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 27 Remove Element](https://leetcode.com/problems/remove-element/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2027%20Remove%20Element.txt)
 [Leetcode Problem 15 3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2015%203Sum.txt)
 [Leetcode Problem 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2026%20Remove%20Duplicates%20from%20Sorted%20Array.txt)
-[Leetcode Problem 58. Length of last character](https://leetcode.com/problems/length-of-last-word/) | Easy | [Python]()
+[Leetcode Problem 45. Jump Game II](https://leetcode.com/problems/jump-game-ii) | Medium | 
+[Leetcode Problem 58. Length of last character](https://leetcode.com/problems/length-of-last-word/) | Easy | 
 [Leetcode Problem 76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%2076%20Minimum%20Window%20Substring.txt)
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
 [Leetcode Problem 209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20209%20Minimum%20Size%20Subarrary%20Sum.txt)
 [Leetcode Problem 392 Is Subsequence](https://leetcode.com/problems/is-subsequence/description/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20392%20Is%20Subsequence.txt)
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
+[Leetcode Problem 2405. Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string) | Easy | 
 
 
 Recursion & Trees | Difficulty |  solution link
