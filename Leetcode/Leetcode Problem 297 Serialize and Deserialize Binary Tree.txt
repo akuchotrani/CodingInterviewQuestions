@@ -85,3 +85,68 @@ class Codec:
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.deserialize(codec.serialize(root))
+
+
+
+
+
+Alternate approach using DFS
+
+class Codec:
+    
+    def custom_serialize(self, root, answer):
+        if root == None:
+            answer += "None" + ","
+        else: 
+            answer += str(root.val) + ","
+            answer = self.custom_serialize(root.left, answer)
+            answer = self.custom_serialize(root.right, answer)
+        
+        return answer
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        if root == None:
+            return ""
+        answer = self.custom_serialize(root,"")
+        print(answer)
+        return answer
+        
+        
+    
+    def custom_deserialize(self, tokens):
+        
+        if(len(tokens) == 0):
+            return None
+        
+        if(tokens == None or tokens[0] == "None"):
+            tokens.pop(0)
+            return None
+        else:
+            #print(tokens)
+            currentToken = tokens[0]
+            tokens.pop(0)
+            node = TreeNode(currentToken)
+            node.left = self.custom_deserialize(tokens)
+            node.right = self.custom_deserialize(tokens)
+        
+        return node        
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        if data == "":
+            return None
+        
+        tokens = data.split(',')
+
+        root = TreeNode(tokens[0])
+        #print(root)
+        return self.custom_deserialize(tokens)

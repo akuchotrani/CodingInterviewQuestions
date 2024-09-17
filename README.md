@@ -194,5 +194,8 @@ Math Problems 		 | Difficulty |  solution link
 [Leetcode Problem 1363. Largest Multiple of Three](https://leetcode.com/problems/largest-multiple-of-three/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%201363%20Largest%20Multiple%20of%20Three.txt)
 
 
+Bit manipulation Problems 		 | Difficulty |  solution link
+---------------------------------|------------|----------------
+[Leetcode Problem 67. Add binary]() | Easy | [Python]()
 
 
