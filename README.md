@@ -79,6 +79,7 @@ BFS DFS Problems | Difficulty |  solution link
 [Leetcode Problem 207 Course Schedule](https://leetcode.com/problems/course-schedule/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20207%20Course%20Schedule%20Python.txt)
 [Leetcode Problem 210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20210%20Course%20Schedule%20II.txt)
 [Leetcode Problem 289 Game of life](https://leetcode.com/problems/game-of-life/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20289%20Game%20of%20Life.txt)
+[Leetcode Problem 339 Nested List Weight Sum](https://leetcode.com/problems/nested-list-weight-sum/) | Medium | [Python]()
 [Leetcode Problem 472. Concatenated Words](https://leetcode.com/problems/concatenated-words/) | Hard | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20472%20Concatenated%20Words.txt)
 [Leetcode Problem 529. Minesweeper](https://leetcode.com/problems/minesweeper/) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20529%20Minesweeper.txt)
 [Leetcode Problem 733. Flood Fill](https://leetcode.com/problems/flood-fill/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20529%20Minesweeper.txt)
@@ -98,7 +99,9 @@ Two Pointer Problems | Difficulty |  solution link
 [Leetcode Problem 125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20125%20Valid%20Palindrome.txt)
 [Leetcode Problem 209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum) | Medium | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20209%20Minimum%20Size%20Subarrary%20Sum.txt)
 [Leetcode Problem 392 Is Subsequence](https://leetcode.com/problems/is-subsequence/description/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20392%20Is%20Subsequence.txt)
+[Leetcode Problem 408. Valid Word Abbreviation](https://leetcode.com/problems/valid-word-abbreviation) | Medium | 
 [Leetcode Problem 680 Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy | [Python](https://github.com/akuchotrani/CodingInterviewQuestions/blob/master/Leetcode/Leetcode%20Problem%20680%20Valid%20Palindrome%20II.txt)
+[Leetcode Problem 1650. Lowest Common Ancestor of a Binary Tree III](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii) | Medium | 
 [Leetcode Problem 2405. Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string) | Easy | 
 
 

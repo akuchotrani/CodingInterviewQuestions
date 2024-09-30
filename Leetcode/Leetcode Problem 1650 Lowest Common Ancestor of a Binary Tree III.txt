@@ -1,0 +1,62 @@
+1650. Lowest Common Ancestor of a Binary Tree III
+
+# Intuition
+Traverse to root and switch pointers and find intersection.
+
+# Approach
+Approach 1: record the path in a dictionary and start traversing from another node and see if there's any element present. 
+Down side is there's extra memory space.
+
+Find collision between two pointers. Record start of both nodes.
+Keep traversing until there is parent otherwise switch to other list start node.
+At some point at the common path both the pointers will meet each other and that's the lowest common ancestor.
+
+# Complexity
+- Time complexity:
+O(H)
+
+- Space complexity:
+O(1)
+
+# Code
+```python3 []
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+        self.parent = None
+"""
+
+class Solution:
+    def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+        # Approach 1
+        # pathNodeP = {}
+        # answer = None
+
+        # while(p):
+        #     pathNodeP[p.val] = None
+        #     p = p.parent
+        
+        # while(q):
+        #     if(q.val in pathNodeP):
+        #         answer = q
+        #         break
+        #     q = q.parent
+        
+        # return answer
+
+        # Approach 2
+        startP = p
+        startQ = q
+
+        while(p.val != q.val):
+            p = p.parent if p.parent else startQ
+            q = q.parent if q.parent else startP
+        
+        return p
+
+        
+```

@@ -1,0 +1,87 @@
+408 Valid Word Abbreviation
+
+A string can be abbreviated by replacing any number of non-adjacent, non-empty substrings with their lengths. The lengths should not have leading zeros.
+
+For example, a string such as "substitution" could be abbreviated as (but not limited to):
+
+"s10n" ("s ubstitutio n")
+"sub4u4" ("sub stit u tion")
+"12" ("substitution")
+"su3i1u2on" ("su bst i t u ti on")
+"substitution" (no substrings replaced)
+The following are not valid abbreviations:
+
+"s55n" ("s ubsti tutio n", the replaced substrings are adjacent)
+"s010n" (has leading zeros)
+"s0ubstitution" (replaces an empty substring)
+Given a string word and an abbreviation abbr, return whether the string matches the given abbreviation.
+
+A substring is a contiguous non-empty sequence of characters within a string.
+
+ 
+
+Example 1:
+
+Input: word = "internationalization", abbr = "i12iz4n"
+Output: true
+Explanation: The word "internationalization" can be abbreviated as "i12iz4n" ("i nternational iz atio n").
+Example 2:
+
+Input: word = "apple", abbr = "a2e"
+Output: false
+Explanation: The word "apple" cannot be abbreviated as "a2e".
+ 
+
+Constraints:
+
+1 <= word.length <= 20
+word consists of only lowercase English letters.
+1 <= abbr.length <= 10
+abbr consists of lowercase English letters and digits.
+All the integers in abbr will fit in a 32-bit integer.
+
+# Intuition
+Iterate through abbreviation and word using two pointers.
+
+# Approach
+If current abbreviation character is number then keep recording the digits.(moveTotal)
+If current abbreviation character is a alphabet move wordPtr by total calculated and compare alphabet. (reset moveTotal)
+
+Edge case:
+1) while recording digits if the first digit is 0 return False
+2) check if we scanned entire word. (e.g. word is "hello" and abbr "4" then you can do either wordPtr + moveTotal or wordPtr == len(word) - moveTotal)
+
+# Complexity
+- Time complexity:
+We scan all the words once
+O(n)
+
+- Space complexity:
+We only record two pointers
+O(1)
+
+# Code
+```python3 []
+class Solution:
+    def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+        moveTotal = 0
+        wordPtr = 0
+        for i in range(len(abbr)):
+            if(abbr[i].isdigit()):
+                if(moveTotal == 0 and int(abbr[i]) == 0):
+                    return False
+                moveTotal = moveTotal * 10 + int(abbr[i])
+            else:
+                wordPtr += moveTotal
+                if(wordPtr > len(word) - 1):
+                    return False
+                if(abbr[i] != word[wordPtr]):
+                    return False
+                else:
+                    wordPtr += 1
+                    moveTotal = 0
+        if(wordPtr != len(word) - moveTotal):
+            return False
+        return True
+        
+```
